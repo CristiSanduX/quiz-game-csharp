@@ -8,3 +8,13 @@ D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.csproj.GenerateResource.cache
 D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.csproj.CoreCompileInputs.cache
 D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.exe
 D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.pdb
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\bin\Debug\JocQuiz.exe.config
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\bin\Debug\JocQuiz.exe
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\bin\Debug\JocQuiz.pdb
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.csproj.AssemblyReference.cache
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.Form1.resources
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.Properties.Resources.resources
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.csproj.GenerateResource.cache
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.csproj.CoreCompileInputs.cache
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.exe
+D:\An III\Semestrul II\IP\Proiect\JocQuiz\ProiectIP\obj\Debug\JocQuiz.pdb

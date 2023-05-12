@@ -22,11 +22,28 @@ namespace JocQuiz
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("aici");
-            tabControlMain.SelectedTab = tabDomenii;
+            if (textBoxEmailLogin.Text == "admin" && textBoxEmailLogin.Text == "admin")
+            {
+                tabControlMain.SelectedTab = tabDomenii;
+            }
+            else
+                MessageBox.Show("Nume sau parola gresita","Eroare");
+           
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+      
+
+        private void buttonInapoiInregist_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tabLogin;
+        }
+
+        private void buttonInregistrare_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tabInregistrare;
+        }
+
+        private void buttonInapoiDomenii_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabLogin;
         }
