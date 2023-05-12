@@ -1,0 +1,10 @@
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\JocQuiz.exe.config
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\JocQuiz.exe
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\JocQuiz.pdb
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.csproj.AssemblyReference.cache
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.Form1.resources
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.Properties.Resources.resources
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.csproj.GenerateResource.cache
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.csproj.CoreCompileInputs.cache
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.exe
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.pdb
