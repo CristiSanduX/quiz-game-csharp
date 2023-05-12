@@ -137,7 +137,7 @@ namespace JocQuiz
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 28.2F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(497, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 61);
+            this.label3.Size = new System.Drawing.Size(131, 60);
             this.label3.TabIndex = 10;
             this.label3.Text = "Start";
             // 
@@ -278,6 +278,7 @@ namespace JocQuiz
             this.buttonAdauga.TabIndex = 9;
             this.buttonAdauga.Text = "Creare";
             this.buttonAdauga.UseVisualStyleBackColor = false;
+            this.buttonAdauga.Click += new System.EventHandler(this.buttonAdauga_Click);
             // 
             // pictureBox4
             // 
@@ -346,7 +347,7 @@ namespace JocQuiz
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(128, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 32);
+            this.label4.Size = new System.Drawing.Size(191, 32);
             this.label4.TabIndex = 0;
             this.label4.Text = "Înregistrează";
             // 
@@ -407,7 +408,7 @@ namespace JocQuiz
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(173, 63);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(829, 32);
+            this.label6.Size = new System.Drawing.Size(828, 32);
             this.label6.TabIndex = 15;
             this.label6.Text = "Alegeți domeniul pentru care doriți să vă testați cunoștințele";
             // 
@@ -537,7 +538,7 @@ namespace JocQuiz
             this.labelIntrebare.AutoSize = true;
             this.labelIntrebare.Location = new System.Drawing.Point(464, 119);
             this.labelIntrebare.Name = "labelIntrebare";
-            this.labelIntrebare.Size = new System.Drawing.Size(65, 17);
+            this.labelIntrebare.Size = new System.Drawing.Size(60, 16);
             this.labelIntrebare.TabIndex = 0;
             this.labelIntrebare.Text = "Întrebare";
             // 
@@ -563,7 +564,7 @@ namespace JocQuiz
             this.labelScor.AutoSize = true;
             this.labelScor.Location = new System.Drawing.Point(456, 322);
             this.labelScor.Name = "labelScor";
-            this.labelScor.Size = new System.Drawing.Size(32, 17);
+            this.labelScor.Size = new System.Drawing.Size(28, 16);
             this.labelScor.TabIndex = 6;
             this.labelScor.Text = "360";
             // 
@@ -572,7 +573,7 @@ namespace JocQuiz
             this.labelTimp.AutoSize = true;
             this.labelTimp.Location = new System.Drawing.Point(456, 264);
             this.labelTimp.Name = "labelTimp";
-            this.labelTimp.Size = new System.Drawing.Size(24, 17);
+            this.labelTimp.Size = new System.Drawing.Size(21, 16);
             this.labelTimp.TabIndex = 5;
             this.labelTimp.Text = "10";
             // 
@@ -602,7 +603,7 @@ namespace JocQuiz
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(403, 112);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(344, 44);
+            this.label10.Size = new System.Drawing.Size(336, 42);
             this.label10.TabIndex = 2;
             this.label10.Text = "Jocul s-a încheiat!";
             // 
