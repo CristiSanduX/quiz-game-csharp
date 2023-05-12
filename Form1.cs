@@ -10,12 +10,20 @@ using System.Windows.Forms;
 using System.Text.Json;
 using System.IO;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace JocQuiz
 {
     public partial class Form1 : Form
     {
         private bool parolaVizibila = false;
+
+        // Validare adresă de e-mail
+        string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+
+        // Validare parolă cu cel puțin 8 caractere
+        string parolaPattern = @".{8,}";
+
 
         public Form1()
         {
@@ -83,7 +91,15 @@ namespace JocQuiz
             string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
 
 
-            if (string.IsNullOrWhiteSpace(nume) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(parola))
+            if (!Regex.IsMatch(email, emailPattern))
+            {
+                MessageBox.Show("Adresa de e-mail introdusă nu este validă.");
+            }
+            else if (!Regex.IsMatch(parola, parolaPattern))
+            {
+                MessageBox.Show("Parola trebuie să aibă cel puțin 8 caractere.");
+            }
+            else if (string.IsNullOrWhiteSpace(nume) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(parola))
             {
                 MessageBox.Show("Vă rugăm să completați toate câmpurile.");
             }
