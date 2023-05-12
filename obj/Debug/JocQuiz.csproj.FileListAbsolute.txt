@@ -50,3 +50,36 @@ C:\Users\cioba\Desktop\Proiect IP\ProiectIP\bin\Debug\System.ValueTuple.xml
 C:\Users\cioba\Desktop\Proiect IP\ProiectIP\obj\Debug\JocQuiz.csproj.CopyComplete
 C:\Users\cioba\Desktop\Proiect IP\ProiectIP\bin\Debug\Newtonsoft.Json.dll
 C:\Users\cioba\Desktop\Proiect IP\ProiectIP\bin\Debug\Newtonsoft.Json.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\utilizatori.json
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\JocQuiz.exe.config
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\JocQuiz.exe
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\JocQuiz.pdb
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\Newtonsoft.Json.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Buffers.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Memory.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Text.Json.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.ValueTuple.dll
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\Newtonsoft.Json.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Buffers.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Memory.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Text.Json.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\csx\Desktop\ProiectIP\bin\Debug\System.ValueTuple.xml
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.csproj.AssemblyReference.cache
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.csproj.SuggestedBindingRedirects.cache
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.Form1.resources
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.Properties.Resources.resources
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.csproj.GenerateResource.cache
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.csproj.CoreCompileInputs.cache
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.csproj.CopyComplete
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.exe
+C:\Users\csx\Desktop\ProiectIP\obj\Debug\JocQuiz.pdb

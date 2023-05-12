@@ -1,1 +1,17 @@
-{"Nume":"sad","Email":"asd","Parola":"asd"}
+[
+  {
+    "Nume": "cristi",
+    "Email": "cristi.sandu@csx.ro",
+    "Parola": "Test1"
+  },
+  {
+    "Nume": "eduard",
+    "Email": "ciobanu.eduard.tarciziu@gmail.com",
+    "Parola": "Test2"
+  },
+  {
+    "Nume": "admin",
+    "Email": "admin@gmail.com",
+    "Parola": "admin"
+  }
+]

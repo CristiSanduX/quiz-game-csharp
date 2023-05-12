@@ -1,18 +1,17 @@
 [
   {
-    "Nume": "mama",
-    "Email": "mama",
-    "Parola": "123"
+    "Nume": "cristi",
+    "Email": "cristi.sandu@csx.ro",
+    "Parola": "Test1"
   },
   {
-    "Nume": "sadasd",
-    "Email": "asdasd",
-    "Parola": "asdasd"
+    "Nume": "eduard",
+    "Email": "ciobanu.eduard.tarciziu@gmail.com",
+    "Parola": "Test2"
   },
-  
   {
-    "Nume": "Mamia",
-    "Email": "asfdas",
-    "Parola": "asfasf"
+    "Nume": "admin",
+    "Email": "admin@gmail.com",
+    "Parola": "admin"
   }
 ]

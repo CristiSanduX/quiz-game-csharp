@@ -15,6 +15,8 @@ namespace JocQuiz
 {
     public partial class Form1 : Form
     {
+        private bool parolaVizibila = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -25,17 +27,37 @@ namespace JocQuiz
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (textBoxEmailLogin.Text == "admin" && textBoxEmailLogin.Text == "admin")
+            string numeUtilizator = textBoxEmailLogin.Text;
+            string parola = textBoxParolaLogin.Text;
+
+            string numeFisier = "utilizatori.json";
+            string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
+
+            // Verificăm dacă fișierul utilizatori.json există
+            if (!File.Exists(caleFisier))
+            {
+                MessageBox.Show("Fișierul utilizatori.json nu există.", "Eroare");
+                return;
+            }
+
+            // Încărcăm conținutul fișierului utilizatori.json
+            string json = File.ReadAllText(caleFisier);
+
+            // Deserializăm lista de utilizatori din fișierul JSON
+            List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(json);
+
+            // Verificăm dacă există un utilizator cu numele și parola introduse
+            bool utilizatorExistent = utilizatori.Any(u => u.Nume == numeUtilizator && u.Parola == parola);
+
+            if (utilizatorExistent)
             {
                 tabControlMain.SelectedTab = tabDomenii;
             }
             else
-                MessageBox.Show("Nume sau parola gresita","Eroare");
-           
+            {
+                MessageBox.Show("Nume sau parolă greșită.", "Eroare");
+            }
         }
-
-      
-
         private void buttonInapoiInregist_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabLogin;
@@ -57,6 +79,10 @@ namespace JocQuiz
             string email = textBoxEmailInregist.Text;
             string parola = textBoxParolaInregist.Text;
 
+            string numeFisier = "utilizatori.json";
+            string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
+
+
             if (string.IsNullOrWhiteSpace(nume) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(parola))
             {
                 MessageBox.Show("Vă rugăm să completați toate câmpurile.");
@@ -64,7 +90,7 @@ namespace JocQuiz
             else
             {
                 // Verificăm dacă fișierul utilizatori.json există deja
-                if (!File.Exists(@"C:\Users\cioba\Desktop\Proiect IP\ProiectIP\utilizatori.json"))
+                if (!File.Exists(caleFisier))
                 {
                     // Dacă nu există, creăm un nou fișier JSON cu obiectul Utilizator serializat
                     Utilizator utilizator = new Utilizator()
@@ -74,12 +100,12 @@ namespace JocQuiz
                         Parola = parola
                     };
                     string json = System.Text.Json.JsonSerializer.Serialize(utilizator);
-                    File.WriteAllText(@"C:\Users\cioba\Desktop\Proiect IP\ProiectIP\utilizatori.json", json);
+                    File.WriteAllText(caleFisier, json);
                 }
                 else
                 {
                     // Dacă fișierul există deja, încărcăm datele vechi
-                    string jsonVechi = File.ReadAllText(@"C:\Users\cioba\Desktop\Proiect IP\ProiectIP\utilizatori.json");
+                    string jsonVechi = File.ReadAllText(caleFisier);
                     List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
 
                     // Adăugăm datele noi la lista de utilizatori
@@ -92,12 +118,27 @@ namespace JocQuiz
 
                     // Serializăm lista actualizată și rescriem fișierul JSON
                     string jsonNou = JsonConvert.SerializeObject(utilizatori, Formatting.Indented);
-                    File.WriteAllText(@"C:\Users\cioba\Desktop\Proiect IP\ProiectIP\utilizatori.json", jsonNou);
+                    File.WriteAllText("C:/Users/csx/Desktop/ProiectIP/utilizatori.json", jsonNou);
                 }
 
                 MessageBox.Show("Contul a fost creat cu succes!");
             }
         }
 
+        private void buttonParola_Click(object sender, EventArgs e)
+        {
+            parolaVizibila = !parolaVizibila;
+
+            if (parolaVizibila)
+            {
+                textBoxParolaLogin.UseSystemPasswordChar = false;
+                buttonParola.BackgroundImage = Properties.Resources.eye_open;
+            }
+            else
+            {
+                textBoxParolaLogin.UseSystemPasswordChar = true;
+                buttonParola.BackgroundImage = Properties.Resources.eye_closed;
+            }
+        }  
     }
 }

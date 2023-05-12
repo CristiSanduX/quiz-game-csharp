@@ -118,7 +118,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="utilizatori.json" />
+    <Content Include="Properties\eye_closed.png" />
+    <Content Include="Properties\eye_open.png" />
+    <None Include="Resources\eye_closed.png" />
+    <None Include="Resources\eye_open.png" />
+    <Content Include="utilizatori.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
