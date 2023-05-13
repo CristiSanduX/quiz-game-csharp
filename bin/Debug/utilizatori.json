@@ -13,5 +13,25 @@
     "Nume": "admin",
     "Email": "admin@gmail.com",
     "Parola": "admin"
+  },
+  {
+    "Nume": "Eduard",
+    "Email": "eduard@gmail.com",
+    "Parola": "12345678"
+  },
+  {
+    "Nume": "Diana",
+    "Email": "diana@gmail.com",
+    "Parola": "12345678"
+  },
+  {
+    "Nume": "eduard",
+    "Email": "cristi@gmail.com",
+    "Parola": "12345678"
+  },
+  {
+    "Nume": "cristi",
+    "Email": "sandu@gmail.com",
+    "Parola": "12345678"
   }
 ]

@@ -28,14 +28,18 @@ namespace JocQuiz
         public Form1()
         {
             InitializeComponent();
+            this.Size = new Size(950, 655);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            
             tabControlMain.Appearance = TabAppearance.FlatButtons;
             tabControlMain.ItemSize = new Size(0, 1);
             tabControlMain.SizeMode = TabSizeMode.Fixed;
+
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string numeUtilizator = textBoxEmailLogin.Text;
+            string email = textBoxEmailLogin.Text;
             string parola = textBoxParolaLogin.Text;
 
             string numeFisier = "utilizatori.json";
@@ -55,7 +59,7 @@ namespace JocQuiz
             List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(json);
 
             // Verificăm dacă există un utilizator cu numele și parola introduse
-            bool utilizatorExistent = utilizatori.Any(u => u.Nume == numeUtilizator && u.Parola == parola);
+            bool utilizatorExistent = utilizatori.Any(u => u.Email == email && u.Parola == parola);
 
             if (utilizatorExistent)
             {
@@ -74,6 +78,9 @@ namespace JocQuiz
         private void buttonInregistrare_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabInregistrare;
+            textBoxEmailInregist.Clear();
+            textBoxNumeInregist.Clear();
+            textBoxParolaInregist.Clear();
         }
 
         private void buttonInapoiDomenii_Click(object sender, EventArgs e)
@@ -124,6 +131,7 @@ namespace JocQuiz
                     string jsonVechi = File.ReadAllText(caleFisier);
                     List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
 
+                    
                     // Adăugăm datele noi la lista de utilizatori
                     utilizatori.Add(new Utilizator
                     {
@@ -134,10 +142,11 @@ namespace JocQuiz
 
                     // Serializăm lista actualizată și rescriem fișierul JSON
                     string jsonNou = JsonConvert.SerializeObject(utilizatori, Formatting.Indented);
-                    File.WriteAllText("C:/Users/csx/Desktop/ProiectIP/utilizatori.json", jsonNou);
+                    File.WriteAllText(@"C:\Users\cioba\Desktop\Proiect IP NOU\ProiectIP\utilizatori.json", jsonNou);
                 }
 
                 MessageBox.Show("Contul a fost creat cu succes!");
+                tabControlMain.SelectedTab = tabLogin;
             }
         }
 
@@ -155,6 +164,8 @@ namespace JocQuiz
                 textBoxParolaLogin.UseSystemPasswordChar = true;
                 buttonParola.BackgroundImage = Properties.Resources.eye_closed;
             }
-        }  
+        }
+
+        
     }
 }
