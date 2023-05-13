@@ -24,6 +24,8 @@ namespace JocQuiz
         // Validare parolă cu cel puțin 8 caractere
         string parolaPattern = @".{8,}";
 
+        static string numeFisier = "utilizatori.json";
+        static string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
 
         public Form1()
         {
@@ -41,33 +43,20 @@ namespace JocQuiz
         {
             string email = textBoxEmailLogin.Text;
             string parola = textBoxParolaLogin.Text;
-
-            string numeFisier = "utilizatori.json";
-            string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
-
-            // Verificăm dacă fișierul utilizatori.json există
-            if (!File.Exists(caleFisier))
+            try
             {
-                MessageBox.Show("Fișierul utilizatori.json nu există.", "Eroare");
-                return;
+                if (AccountExists(email, parola))
+                {
+                    tabControlMain.SelectedTab = tabDomenii;
+                }
+                else
+                {
+                    throw new Exception("Nume sau parolă greșită.");
+                }
             }
-
-            // Încărcăm conținutul fișierului utilizatori.json
-            string json = File.ReadAllText(caleFisier);
-
-            // Deserializăm lista de utilizatori din fișierul JSON
-            List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(json);
-
-            // Verificăm dacă există un utilizator cu numele și parola introduse
-            bool utilizatorExistent = utilizatori.Any(u => u.Email == email && u.Parola == parola);
-
-            if (utilizatorExistent)
+            catch(Exception k)
             {
-                tabControlMain.SelectedTab = tabDomenii;
-            }
-            else
-            {
-                MessageBox.Show("Nume sau parolă greșită.", "Eroare");
+                MessageBox.Show(k.Message, "Eroare");
             }
         }
         private void buttonInapoiInregist_Click(object sender, EventArgs e)
@@ -90,63 +79,76 @@ namespace JocQuiz
 
         private void buttonAdauga_Click(object sender, EventArgs e)
         {
-            string nume = textBoxNumeInregist.Text;
-            string email = textBoxEmailInregist.Text;
-            string parola = textBoxParolaInregist.Text;
+            try
+            {
 
-            string numeFisier = "utilizatori.json";
-            string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
+                string nume = textBoxNumeInregist.Text;
+                string email = textBoxEmailInregist.Text;
+                string parola = textBoxParolaInregist.Text;
 
 
-            if (!Regex.IsMatch(email, emailPattern))
-            {
-                MessageBox.Show("Adresa de e-mail introdusă nu este validă.");
-            }
-            else if (!Regex.IsMatch(parola, parolaPattern))
-            {
-                MessageBox.Show("Parola trebuie să aibă cel puțin 8 caractere.");
-            }
-            else if (string.IsNullOrWhiteSpace(nume) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(parola))
-            {
-                MessageBox.Show("Vă rugăm să completați toate câmpurile.");
-            }
-            else
-            {
-                // Verificăm dacă fișierul utilizatori.json există deja
-                if (!File.Exists(caleFisier))
+                if (!Regex.IsMatch(email, emailPattern))
                 {
-                    // Dacă nu există, creăm un nou fișier JSON cu obiectul Utilizator serializat
-                    Utilizator utilizator = new Utilizator()
-                    {
-                        Nume = nume,
-                        Email = email,
-                        Parola = parola
-                    };
-                    string json = System.Text.Json.JsonSerializer.Serialize(utilizator);
-                    File.WriteAllText(caleFisier, json);
+                    throw new Exception("Adresa de e-mail introdusă nu este validă.");
+                }
+                else if (!Regex.IsMatch(parola, parolaPattern))
+                {
+                    throw new Exception("Parola trebuie să aibă cel puțin 8 caractere.");
+                }
+                else if (string.IsNullOrWhiteSpace(nume) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(parola))
+                {
+                    throw new Exception("Vă rugăm să completați toate câmpurile.");
                 }
                 else
                 {
-                    // Dacă fișierul există deja, încărcăm datele vechi
-                    string jsonVechi = File.ReadAllText(caleFisier);
-                    List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
-
-                    
-                    // Adăugăm datele noi la lista de utilizatori
-                    utilizatori.Add(new Utilizator
+                    // Verificăm dacă fișierul utilizatori.json există deja
+                    if (!File.Exists(caleFisier))
                     {
-                        Nume = nume,
-                        Email = email,
-                        Parola = parola
-                    });
+                        // Dacă nu există, creăm un nou fișier JSON cu obiectul Utilizator serializat
+                        Utilizator utilizator = new Utilizator()
+                        {
+                            Nume = nume,
+                            Email = email,
+                            Parola = parola
+                        };
+                        //if()
+                        string json = System.Text.Json.JsonSerializer.Serialize(utilizator);
+                        File.WriteAllText(caleFisier, json);
+                    }
+                    else
+                    {
+                        // Dacă fișierul există deja, încărcăm datele vechi
+                        string jsonVechi = File.ReadAllText(caleFisier);
+                        List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
 
-                    // Serializăm lista actualizată și rescriem fișierul JSON
-                    string jsonNou = JsonConvert.SerializeObject(utilizatori, Formatting.Indented);
-                    File.WriteAllText(@"C:\Users\cioba\Desktop\Proiect IP NOU\ProiectIP\utilizatori.json", jsonNou);
+                        bool utilizatorExistent = utilizatori.Any(u => u.Email == email);
+                        if (utilizatorExistent)
+                        {
+                            throw new Exception("Exista deja un utilizator cu acest email.");
+                        }
+                        else
+                        {
+                            // Adăugăm datele noi la lista de utilizatori
+                            utilizatori.Add(new Utilizator
+                            {
+                                Nume = nume,
+                                Email = email,
+                                Parola = parola
+                            });
+
+                            // Serializăm lista actualizată și rescriem fișierul JSON
+                            string jsonNou = JsonConvert.SerializeObject(utilizatori, Formatting.Indented);
+                            File.WriteAllText(@"D:\FACULTATE\IP\Proiect\JocQuiz\utilizatori.json", jsonNou);
+                        }
+                    }
+
+                    MessageBox.Show("Contul a fost creat cu succes!");
+                    tabControlMain.SelectedTab = tabLogin;
                 }
-
-                MessageBox.Show("Contul a fost creat cu succes!");
-                tabControlMain.SelectedTab = tabLogin;
+            }
+            catch(Exception k)
+            {
+                MessageBox.Show(k.Message,"Eroare");
             }
         }
 
@@ -166,6 +168,29 @@ namespace JocQuiz
             }
         }
 
-        
+        public bool AccountExists(string email, string parola)
+        {
+            string numeFisier = "utilizatori.json";
+            string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
+            // Verificăm dacă fișierul utilizatori.json există
+            if (!File.Exists(caleFisier))
+            {
+                MessageBox.Show("Fișierul utilizatori.json nu există.", "Eroare");
+                return false;
+            }
+
+            // Încărcăm conținutul fișierului utilizatori.json
+            string json = File.ReadAllText(@"D:\FACULTATE\IP\Proiect\JocQuiz\utilizatori.json");
+            Console.WriteLine(json);
+
+            // Deserializăm lista de utilizatori din fișierul JSON
+            List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(json);
+
+            // Verificăm dacă există un utilizator cu email și parola introduse
+            bool utilizatorExistent = utilizatori.Any(u => u.Email == email && u.Parola == parola);
+
+            return utilizatorExistent;
+        }
+
     }
 }

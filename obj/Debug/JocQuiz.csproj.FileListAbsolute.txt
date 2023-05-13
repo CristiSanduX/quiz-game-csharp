@@ -116,3 +116,25 @@ C:\Users\cioba\Desktop\Proiect IP NOU\ProiectIP\obj\Debug\JocQuiz.csproj.CoreCom
 C:\Users\cioba\Desktop\Proiect IP NOU\ProiectIP\obj\Debug\JocQuiz.csproj.CopyComplete
 C:\Users\cioba\Desktop\Proiect IP NOU\ProiectIP\obj\Debug\JocQuiz.exe
 C:\Users\cioba\Desktop\Proiect IP NOU\ProiectIP\obj\Debug\JocQuiz.pdb
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\utilizatori.json
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\Newtonsoft.Json.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Buffers.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Memory.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Numerics.Vectors.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Text.Encodings.Web.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Text.Json.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.ValueTuple.dll
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\Newtonsoft.Json.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Buffers.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Memory.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Numerics.Vectors.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Text.Encodings.Web.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Text.Json.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\bin\Debug\System.ValueTuple.xml
+D:\FACULTATE\IP\Proiect\JocQuiz\obj\Debug\JocQuiz.csproj.CopyComplete

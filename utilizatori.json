@@ -1,37 +1,17 @@
 [
   {
-    "Nume": "cristi",
-    "Email": "cristi.sandu@csx.ro",
-    "Parola": "Test1"
-  },
-  {
-    "Nume": "eduard",
-    "Email": "ciobanu.eduard.tarciziu@gmail.com",
-    "Parola": "Test2"
-  },
-  {
     "Nume": "admin",
     "Email": "admin@gmail.com",
     "Parola": "admin"
   },
   {
-    "Nume": "Eduard",
-    "Email": "eduard@gmail.com",
-    "Parola": "12345678"
+    "Nume": "sebastian",
+    "Email": "sebi147852@yahoo.ro",
+    "Parola": "parolatare"
   },
   {
-    "Nume": "Diana",
-    "Email": "diana@gmail.com",
-    "Parola": "12345678"
-  },
-  {
-    "Nume": "eduard",
-    "Email": "cristi@gmail.com",
-    "Parola": "12345678"
-  },
-  {
-    "Nume": "cristi",
-    "Email": "sandu@gmail.com",
+    "Nume": "asdasd",
+    "Email": "asdasd@yahoo.com",
     "Parola": "12345678"
   }
 ]
