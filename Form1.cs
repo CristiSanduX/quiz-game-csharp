@@ -17,6 +17,8 @@ namespace JocQuiz
     public partial class Form1 : Form
     {
         private bool parolaVizibila = false;
+        List<Intrebare> Intrebari = new List<Intrebare>(20);
+        int indexIntrebareCurenta = 0;
 
         // Validare adresă de e-mail
         string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
@@ -24,8 +26,7 @@ namespace JocQuiz
         // Validare parolă cu cel puțin 8 caractere
         string parolaPattern = @".{8,}";
 
-        static string numeFisier = "utilizatori.json";
-        static string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
+        static string numeFisier = @"../../utilizatori.json";
 
         public Form1()
         {
@@ -102,7 +103,7 @@ namespace JocQuiz
                 else
                 {
                     // Verificăm dacă fișierul utilizatori.json există deja
-                    if (!File.Exists(caleFisier))
+                    if (!File.Exists(numeFisier))
                     {
                         // Dacă nu există, creăm un nou fișier JSON cu obiectul Utilizator serializat
                         Utilizator utilizator = new Utilizator()
@@ -113,12 +114,12 @@ namespace JocQuiz
                         };
                         //if()
                         string json = System.Text.Json.JsonSerializer.Serialize(utilizator);
-                        File.WriteAllText(caleFisier, json);
+                        File.WriteAllText(numeFisier, json);
                     }
                     else
                     {
                         // Dacă fișierul există deja, încărcăm datele vechi
-                        string jsonVechi = File.ReadAllText(caleFisier);
+                        string jsonVechi = File.ReadAllText(numeFisier);
                         List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
 
                         bool utilizatorExistent = utilizatori.Any(u => u.Email == email);
@@ -138,7 +139,7 @@ namespace JocQuiz
 
                             // Serializăm lista actualizată și rescriem fișierul JSON
                             string jsonNou = JsonConvert.SerializeObject(utilizatori, Formatting.Indented);
-                            File.WriteAllText(@"D:\FACULTATE\IP\Proiect\JocQuiz\utilizatori.json", jsonNou);
+                            File.WriteAllText(numeFisier, jsonNou);
                         }
                     }
 
@@ -170,17 +171,16 @@ namespace JocQuiz
 
         public bool AccountExists(string email, string parola)
         {
-            string numeFisier = "utilizatori.json";
-            string caleFisier = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, numeFisier);
+            string numeFisier = @"../../utilizatori.json";
             // Verificăm dacă fișierul utilizatori.json există
-            if (!File.Exists(caleFisier))
+            if (!File.Exists(numeFisier))
             {
                 MessageBox.Show("Fișierul utilizatori.json nu există.", "Eroare");
                 return false;
             }
 
             // Încărcăm conținutul fișierului utilizatori.json
-            string json = File.ReadAllText(@"D:\FACULTATE\IP\Proiect\JocQuiz\utilizatori.json");
+            string json = File.ReadAllText(numeFisier);
             Console.WriteLine(json);
 
             // Deserializăm lista de utilizatori din fișierul JSON
@@ -192,5 +192,95 @@ namespace JocQuiz
             return utilizatorExistent;
         }
 
+       
+         
+ 
+
+        private void buttonRaspuns1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonRaspuns2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRaspuns3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRaspuns4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonIstorie_Click(object sender, EventArgs e)
+        {
+
+            tabControlMain.SelectedTab = tabJoc;
+            
+
+
+
+        }
+
+        private void buttonGeografie_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tabJoc;
+            
+
+        }
+
+        private void buttonSport_Click(object sender, EventArgs e)
+        {
+            
+            tabControlMain.SelectedTab = tabJoc;
+            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariSport.json"));
+            indexIntrebareCurenta = 0; // setați indexul întrebării curente la 0
+            IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
+        }
+
+        private void buttonMuzica_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tabJoc;
+            
+        }
+
+        public List<Intrebare> IncarcaIntrebariDinJson(string pathToJsonFile)
+        {
+            string json = File.ReadAllText(pathToJsonFile);
+            List<Intrebare> intrebari = JsonConvert.DeserializeObject<List<Intrebare>>(json);
+            return intrebari;
+        }
+
+        public void IncarcaIntrebare(Intrebare intrebare)
+        {
+            // Afisam intrebarea in label
+            labelIntrebare.Text = intrebare.intrebare;
+
+            // Incarcam variantele de raspuns in butoane
+            buttonRaspuns1.Text = intrebare.variante[0];
+            buttonRaspuns2.Text = intrebare.variante[1];
+            buttonRaspuns3.Text = intrebare.variante[2];
+            buttonRaspuns4.Text = intrebare.variante[3];
+        }
+
+        private void buttonTrimiteRaspuns_Click(object sender, EventArgs e)
+        {
+            indexIntrebareCurenta++; // increment indexul pentru a trece la următoarea întrebare
+            if (indexIntrebareCurenta < Intrebari.Count)
+            {
+                // dacă există încă întrebări în fișierul JSON, încărcați următoarea întrebare
+                IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
+            }
+            else
+            {
+                MessageBox.Show("Ati terminat jocul");
+                tabControlMain.SelectedTab = tabFinal;
+
+
+            }
+        }
     }
 }

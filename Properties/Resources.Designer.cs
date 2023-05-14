@@ -79,5 +79,25 @@ namespace JocQuiz.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] IntrebariSport {
+            get {
+                object obj = ResourceManager.GetObject("IntrebariSport", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] utilizatori {
+            get {
+                object obj = ResourceManager.GetObject("utilizatori", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

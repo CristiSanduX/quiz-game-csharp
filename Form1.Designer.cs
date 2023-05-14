@@ -65,6 +65,8 @@ namespace JocQuiz
             this.buttonGeografie = new System.Windows.Forms.Button();
             this.buttonIstorie = new System.Windows.Forms.Button();
             this.tabJoc = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -81,8 +83,7 @@ namespace JocQuiz
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.buttonTrimiteRaspuns = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tabLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -452,6 +453,7 @@ namespace JocQuiz
             this.buttonSport.TabIndex = 13;
             this.buttonSport.Text = "Sport";
             this.buttonSport.UseVisualStyleBackColor = false;
+            this.buttonSport.Click += new System.EventHandler(this.buttonSport_Click);
             // 
             // buttonMuzica
             // 
@@ -464,6 +466,7 @@ namespace JocQuiz
             this.buttonMuzica.TabIndex = 12;
             this.buttonMuzica.Text = "Muzică";
             this.buttonMuzica.UseVisualStyleBackColor = false;
+            this.buttonMuzica.Click += new System.EventHandler(this.buttonMuzica_Click);
             // 
             // buttonGeografie
             // 
@@ -477,6 +480,7 @@ namespace JocQuiz
             this.buttonGeografie.TabIndex = 11;
             this.buttonGeografie.Text = "Geografie";
             this.buttonGeografie.UseVisualStyleBackColor = false;
+            this.buttonGeografie.Click += new System.EventHandler(this.buttonGeografie_Click);
             // 
             // buttonIstorie
             // 
@@ -489,10 +493,12 @@ namespace JocQuiz
             this.buttonIstorie.TabIndex = 10;
             this.buttonIstorie.Text = "Istorie";
             this.buttonIstorie.UseVisualStyleBackColor = false;
+            this.buttonIstorie.Click += new System.EventHandler(this.buttonIstorie_Click);
             // 
             // tabJoc
             // 
             this.tabJoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabJoc.Controls.Add(this.buttonTrimiteRaspuns);
             this.tabJoc.Controls.Add(this.label15);
             this.tabJoc.Controls.Add(this.label14);
             this.tabJoc.Controls.Add(this.label13);
@@ -509,6 +515,26 @@ namespace JocQuiz
             this.tabJoc.Size = new System.Drawing.Size(1234, 726);
             this.tabJoc.TabIndex = 3;
             this.tabJoc.Text = "Joc";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(575, 459);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 67);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "D";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(9, 459);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 67);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "C";
             // 
             // label13
             // 
@@ -542,44 +568,48 @@ namespace JocQuiz
             // 
             // buttonRaspuns3
             // 
-            this.buttonRaspuns3.BackColor = System.Drawing.Color.Lime;
+            this.buttonRaspuns3.BackColor = System.Drawing.Color.White;
             this.buttonRaspuns3.Location = new System.Drawing.Point(98, 448);
             this.buttonRaspuns3.Name = "buttonRaspuns3";
             this.buttonRaspuns3.Size = new System.Drawing.Size(399, 78);
             this.buttonRaspuns3.TabIndex = 4;
             this.buttonRaspuns3.UseVisualStyleBackColor = false;
+            this.buttonRaspuns3.Click += new System.EventHandler(this.buttonRaspuns3_Click);
             // 
             // buttonRaspuns2
             // 
-            this.buttonRaspuns2.BackColor = System.Drawing.Color.Lime;
+            this.buttonRaspuns2.BackColor = System.Drawing.Color.White;
             this.buttonRaspuns2.Location = new System.Drawing.Point(670, 289);
             this.buttonRaspuns2.Name = "buttonRaspuns2";
             this.buttonRaspuns2.Size = new System.Drawing.Size(399, 78);
             this.buttonRaspuns2.TabIndex = 3;
             this.buttonRaspuns2.UseVisualStyleBackColor = false;
+            this.buttonRaspuns2.Click += new System.EventHandler(this.buttonRaspuns2_Click);
             // 
             // buttonRaspuns4
             // 
-            this.buttonRaspuns4.BackColor = System.Drawing.Color.Lime;
+            this.buttonRaspuns4.BackColor = System.Drawing.Color.White;
             this.buttonRaspuns4.Location = new System.Drawing.Point(670, 448);
             this.buttonRaspuns4.Name = "buttonRaspuns4";
             this.buttonRaspuns4.Size = new System.Drawing.Size(399, 78);
             this.buttonRaspuns4.TabIndex = 2;
             this.buttonRaspuns4.UseVisualStyleBackColor = false;
+            this.buttonRaspuns4.Click += new System.EventHandler(this.buttonRaspuns4_Click);
             // 
             // buttonRaspuns1
             // 
-            this.buttonRaspuns1.BackColor = System.Drawing.Color.Lime;
+            this.buttonRaspuns1.BackColor = System.Drawing.Color.White;
             this.buttonRaspuns1.Location = new System.Drawing.Point(98, 289);
             this.buttonRaspuns1.Name = "buttonRaspuns1";
             this.buttonRaspuns1.Size = new System.Drawing.Size(399, 78);
             this.buttonRaspuns1.TabIndex = 1;
             this.buttonRaspuns1.UseVisualStyleBackColor = false;
+            this.buttonRaspuns1.Click += new System.EventHandler(this.buttonRaspuns1_Click);
             // 
             // labelIntrebare
             // 
             this.labelIntrebare.AutoSize = true;
-            this.labelIntrebare.Location = new System.Drawing.Point(464, 119);
+            this.labelIntrebare.Location = new System.Drawing.Point(509, 160);
             this.labelIntrebare.Name = "labelIntrebare";
             this.labelIntrebare.Size = new System.Drawing.Size(60, 16);
             this.labelIntrebare.TabIndex = 0;
@@ -670,25 +700,15 @@ namespace JocQuiz
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
-            // label14
+            // buttonTrimiteRaspuns
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(9, 459);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 67);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "C";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(575, 459);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 67);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "D";
+            this.buttonTrimiteRaspuns.Location = new System.Drawing.Point(531, 569);
+            this.buttonTrimiteRaspuns.Name = "buttonTrimiteRaspuns";
+            this.buttonTrimiteRaspuns.Size = new System.Drawing.Size(133, 51);
+            this.buttonTrimiteRaspuns.TabIndex = 10;
+            this.buttonTrimiteRaspuns.Text = "Trimite";
+            this.buttonTrimiteRaspuns.UseVisualStyleBackColor = true;
+            this.buttonTrimiteRaspuns.Click += new System.EventHandler(this.buttonTrimiteRaspuns_Click);
             // 
             // Form1
             // 
@@ -778,6 +798,7 @@ namespace JocQuiz
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button buttonTrimiteRaspuns;
     }
 }
 
