@@ -12,7 +12,4 @@ namespace JocQuiz
         public List<string> variante { get; set; }
         public string raspuns { get; set; }
     }
-
-
-
 }
