@@ -7,7 +7,7 @@
 "c) Jesse Owens",
 "d) Mike Powell"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 
 {
@@ -18,7 +18,7 @@
 "c) Novak Djokovic",
 "d) Pete Sampras"
 ],
-"raspunsuri_corecte": "c"
+"raspuns": "c"
 },
 
 {
@@ -29,7 +29,7 @@
 "c) Rapid Play Game",
 "d) Random Play Game"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 
 {
@@ -40,7 +40,7 @@
 "c) Box",
 "d) Tenis"
 ],
-"raspunsuri_corecte": "b"
+"raspuns": "b"
 },
 
 {
@@ -51,7 +51,7 @@
 "c) Hochei",
 "d) Baschet"
 ],
-"raspunsuri_corecte": "b"
+"raspuns": "b"
 },
 
 {
@@ -62,7 +62,7 @@
 "c) Mary Lou Retton",
 "d) Simone Biles"
 ],
-"raspunsuri_corecte": "b"
+"raspuns": "b"
 },
 
 {
@@ -73,7 +73,7 @@
 "c) Brazilia",
 "d) Argentina"
 ],
-"raspunsuri_corecte": "c"
+"raspuns": "c"
 },
 
 {
@@ -84,7 +84,7 @@
 "c) Baseball",
 "d) Badminton"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 
 {
@@ -95,7 +95,7 @@
 "c) Shaquille O'Neal",
 "d) LeBron James"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 {
 "intrebare": "10. Cine a câștigat aurul olimpic la săritura cu prăjina la Jocurile Olimpice de vară din 2000?",
@@ -105,7 +105,7 @@
 "c) Liu Fei",
 "d) Daniela Bartova"
 ],
-"raspunsuri_corecte": "b"
+"raspuns": "b"
 },
 {
 "intrebare": "11. Ce echipă a câștigat UEFA Champions League în sezonul 2018-2019?",
@@ -115,7 +115,7 @@
 "c) Barcelona",
 "d) Real Madrid"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 {
 "intrebare": "12. În ce an a fost organizată prima ediție a Jocurilor Olimpice de vară moderne?",
@@ -125,7 +125,7 @@
 "c) 1906",
 "d) 1896"
 ],
-"raspunsuri_corecte": "d"
+"raspuns": "d"
 },
 {
 "intrebare": "13. Cine a câștigat aurul olimpic la înot la Jocurile Olimpice de vară din 2008 la proba de 100 m liber?",
@@ -135,7 +135,7 @@
 "c) Libby Trickett",
 "d) Britta Steffen"
 ],
-"raspunsuri_corecte": "d"
+"raspuns": "d"
 },
 {
 "intrebare": "14. Ce sport de iarnă este cunoscut și sub numele de 'schiorul rebel'?",
@@ -145,7 +145,7 @@
 "c) Ski alpin",
 "d) Schi de fond"
 ],
-"raspunsuri_corecte": "b"
+"raspuns": "b"
 },
 {
 "intrebare": "15. Cine a câștigat aurul olimpic la box la categoria grea la Jocurile Olimpice de vară din 1960?",
@@ -155,7 +155,7 @@
 "c) George Foreman",
 "d) Sonny Liston"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 {
 "intrebare": "16. Ce echipă de baschet NBA a câștigat cele mai multe campionate NBA?",
@@ -165,7 +165,7 @@
 "c) Chicago Bulls",
 "d) Golden State Warriors"
 ],
-"raspunsuri_corecte": "b"
+"raspuns": "b"
 },
 {
 "intrebare": "17. La ce sport se referă termenul 'offside'?",
@@ -175,7 +175,7 @@
 "c) Baschet",
 "d) Hochei"
 ],
-"raspunsuri_corecte": "a, b"
+"raspuns": "a, b"
 },
 
 {
@@ -186,7 +186,7 @@
 "c) Pieter van den Hoogenband",
 "d) Grant Hackett"
 ],
-"raspunsuri_corecte": "c"
+"raspuns": "c"
 },
 
 {
@@ -197,7 +197,7 @@
 "c) 10 km",
 "d) 100 km"
 ],
-"raspunsuri_corecte": "a"
+"raspuns": "a"
 },
 
 {
@@ -208,6 +208,6 @@
 "c) Stefka Kostadinova",
 "d) Inha Babakova"
 ],
-"raspunsuri_corecte": "c"
+"raspuns": "c"
 }
 ]

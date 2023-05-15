@@ -228,16 +228,16 @@ namespace JocQuiz
         private void buttonGeografie_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
-            
-
+            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariGeografie.json"));
+            indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
+            IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
         }
 
         private void buttonSport_Click(object sender, EventArgs e)
-        {
-            
+        {    
             tabControlMain.SelectedTab = tabJoc;
-            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariSport.json"));
-            indexIntrebareCurenta = 0; // setați indexul întrebării curente la 0
+            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariSport.json"));
+            indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
             IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
         }
 

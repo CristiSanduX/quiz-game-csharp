@@ -10,7 +10,7 @@ namespace JocQuiz
     {
         public string intrebare { get; set; }
         public List<string> variante { get; set; }
-        public string raspunsuri_corecte { get; set; }
+        public string raspuns { get; set; }
     }
 
 
