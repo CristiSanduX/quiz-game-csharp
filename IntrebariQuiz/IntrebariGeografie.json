@@ -2,130 +2,131 @@
   {
     "intrebare": "1. Care dintre următoarele țări nu face parte din Uniunea Europeană?",
     "variante": [
-      "a) Norvegia",
-      "b) Franța",
-      "c) România",
-      "d) Germania"
+      "Norvegia",
+      "Franța",
+      "România",
+      "Germania"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "2. Care este cel mai mare ocean al planetei?",
     "variante": [
-      "a) Oceanul Atlantic",
-      "b) Oceanul Indian",
-      "c) Oceanul Arctic",
-      "d) Oceanul Pacific"
+      "Oceanul Atlantic",
+      "Oceanul Indian",
+      "Oceanul Arctic",
+      "Oceanul Pacific"
     ],
     "raspuns": "d"
   },
   {
     "intrebare": "3. Care este cel mai mare continent al lumii?",
     "variante": [
-      "a) Europa",
-      "b) America de Nord",
-      "c) Asia",
-      "d) Africa"
+      "Europa",
+      "America de Nord",
+      "Asia",
+      "Africa"
     ],
     "raspuns": "c"
   },
   {
     "intrebare": "4. Care este cel mai înalt vârf muntos din lume?",
     "variante": [
-      "a) Mont Blanc",
-      "b) Matterhorn",
-      "c) Everest",
-      "d) Kilimanjaro"
+      "Mont Blanc",
+      "Matterhorn",
+      "Everest",
+   
+   "Kilimanjaro"
     ],
     "raspuns": "c"
   },
   {
     "intrebare": "5. Care dintre următoarele țări este situată în America de Sud?",
     "variante": [
-      "a) Kenya",
-      "b) Peru",
-      "c) Australia",
-      "d) Suedia"
+      "Kenya",
+      "Peru",
+      "Australia",
+      "Suedia"
     ],
     "raspuns": "b"
   },
   {
     "intrebare": "6. Care este cel mai mare lac din lume după volum?",
     "variante": [
-      "a) Lacul Superior",
-      "b) Marea Caspică",
-      "c) Lacul Victoria",
-      "d) Lacul Baikal"
+      "Lacul Superior",
+      "Marea Caspică",
+      "Lacul Victoria",
+      "Lacul Baikal"
     ],
     "raspuns": "b"
   },
   {
     "intrebare": "7. Care este capitala Etiopiei?",
     "variante": [
-      "a) Addis Ababa",
-      "b) Nairobi",
-      "c) Kigali",
-      "d) Accra"
+      "Addis Ababa",
+      "Nairobi",
+      "Kigali",
+      "Accra"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "8. Care dintre următoarele râuri este cel mai lung din lume?",
     "variante": [
-      "a) Nilul",
-      "b) Amazonul",
-      "c) Mississippi",
-      "d) Yangtze"
+      "Nilul",
+      "Amazonul",
+      "Mississippi",
+      "Yangtze"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "9. Care este capitala Irlandei?",
     "variante": [
-      "a) Dublin",
-      "b) Belfast",
-      "c) Cork",
-      "d) Galway"
+      "Dublin",
+      "Belfast",
+      "Cork",
+      "Galway"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "10. Care dintre următoarele țări nu se află în America de Nord?",
     "variante": [
-      "a) Statele Unite ale Americii",
-      "b) Mexic",
-      "c) Canada",
-      "d) Brazilia"
+      "Statele Unite ale Americii",
+      "Mexic",
+      "Canada",
+      "Brazilia"
     ],
     "raspuns": "d"
   },
   {
     "intrebare": "11. Care este capitala Spaniei?",
     "variante": [
-      "a) Barcelona",
-      "b) Madrid",
-      "c) Valencia",
-      "d) Sevilla"
+      "Barcelona",
+      "Madrid",
+      "Valencia",
+      "Sevilla"
     ],
     "raspuns": "b"
   },
   {
     "intrebare": "12. Care este cel mai mare deșert din lume?",
     "variante": [
-      "a) Sahara",
-      "b) Gobi",
-      "c) Atacama",
-      "d) Kalahari"
+      "Sahara",
+      "Gobi",
+      "Atacama",
+      "Kalahari"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "13. Care este capitala Thailandei?",
     "variante": [
-      "a) Bangkok",
-      "b) Hanoi",
-      "c) Kuala Lumpur",
-      "d) Jakarta"
+      "Bangkok",
+      "Hanoi",
+      "Kuala Lumpur",
+      "Jakarta"
     ],
     "raspuns": "a"
   },
@@ -142,60 +143,60 @@
   {
     "intrebare": "15. Care este capitala Australiei?",
     "variante": [
-      "a) Sydney",
-      "b) Melbourne",
-      "c) Canberra",
-      "d) Brisbane"
+      "Sydney",
+      "Melbourne",
+      "Canberra",
+      "Brisbane"
     ],
     "raspuns": "c"
   },
   {
     "intrebare": "16. Care este cel mai populat oraș din lume?",
     "variante": [
-      "a) Tokyo",
-      "b) Mumbai",
-      "c) Shanghai",
-      "d) New York"
+      "Tokyo",
+      "Mumbai",
+      "Shanghai",
+      "New York"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "17. Care este capitala Suediei?",
     "variante": [
-      "a) Stockholm",
-      "b) Oslo",
-      "c) Helsinki",
-      "d) Copenhaga"
+      "Stockholm",
+      "Oslo",
+      "Helsinki",
+      "Copenhaga"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "18. Care este cel mai mare arhipelag din lume?",
     "variante": [
-      "a) Insulele Hawaii",
-      "b) Insulele Baleare",
-      "c) Insulele Filipine",
-      "d) Insulele Malvine"
+      "Insulele Hawaii",
+      "Insulele Baleare",
+      "Insulele Filipine",
+      "Insulele Malvine"
     ],
     "raspuns": "c"
   },
   {
     "intrebare": "19. Care este capitala Egiptului?",
     "variante": [
-      "a) Cairo",
-      "b) Alexandria",
-      "c) Luxor",
-      "d) Aswan"
+      "Cairo",
+      "Alexandria",
+      "Luxor",
+      "Aswan"
     ],
     "raspuns": "a"
   },
   {
     "intrebare": "20. Care dintre următoarele țări este situată în Peninsula Scandinavică?",
     "variante": [
-      "a) Danemarca",
-      "b) Norvegia",
-      "c) Elveția",
-      "d) Ungaria"
+      "Danemarca",
+      "Norvegia",
+      "Elveția",
+      "Ungaria"
     ],
     "raspuns": "b"
   }

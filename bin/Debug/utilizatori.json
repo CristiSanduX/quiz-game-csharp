@@ -6,13 +6,8 @@
   },
   {
     "Nume": "sebastian",
-    "Email": "sebi147852@yahoo.ro",
+    "Email": "sebi12@yahoo.ro",
     "Parola": "parolatare"
-  },
-  {
-    "Nume": "asdasd",
-    "Email": "asdasd@yahoo.com",
-    "Parola": "12345678"
   },
   {
     "Nume": "George",
@@ -23,5 +18,10 @@
     "Nume": "tarciziu",
     "Email": "tarci@gmail.com",
     "Parola": "12345678"
+  },
+  {
+    "Nume": "Diana",
+    "Email": "diana@yahoo.com",
+    "Parola": "diana123"
   }
 ]

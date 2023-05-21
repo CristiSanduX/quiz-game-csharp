@@ -16,13 +16,13 @@ namespace JocQuiz
 {
     public partial class Form1 : Form
     {
-        private bool parolaVizibila = false;
-        List<Intrebare> Intrebari = new List<Intrebare>(20);
-        int indexIntrebareCurenta = 0;
-        private int raspunsuriCorecte = 0;
-        private string raspunsAles = "";
-        private Timer timpQuiz;
-        private int timpRamas;
+        private bool _parolaVizibila = false;
+        private List<Intrebare> Intrebari = new List<Intrebare>(20);
+        private int _indexIntrebareCurenta = 0;
+        private int _raspunsuriCorecte = 0;
+        private string _raspunsAles = "";
+        private Timer _timpQuiz;
+        private int _timpRamas;
 
 
 
@@ -45,28 +45,28 @@ namespace JocQuiz
             tabControlMain.SizeMode = TabSizeMode.Fixed;
 
 
-            timpQuiz = new Timer();
-            timpQuiz.Interval = 1000; // 1 secunda
-            timpQuiz.Tick += TimpQuiz_Tick;
+            _timpQuiz = new Timer();
+            _timpQuiz.Interval = 1000; // 1 secunda
+            _timpQuiz.Tick += TimpQuizTick;
 
         }
 
-        private void TimpQuiz_Tick(object sender, EventArgs e)
+        private void TimpQuizTick(object sender, EventArgs e)
         {
-            timpRamas--; // Scădem timpul rămas
+            _timpRamas++; // Scădem timpul rămas
                          // Afișăm timpul rămas undeva pe formă, de exemplu într-un Label
-                         // Presupunem că avem un Label numit labelTimpRamas
-            labelTimpRamas.Text = $"Timp rămas: {timpRamas} secunde";
+                         // Presupunem că avem un Label numit label_timpRamas
+            labelTimpRamas.Text = $"Timp: {_timpRamas} secunde";
 
-            if (timpRamas == 0)
+           /* if (_timpRamas == 0)
             {
                 // Dacă timpul a expirat, oprim timerul și afișăm scorul final
-                timpQuiz.Stop();
+                _timpQuiz.Stop();
                 tabControlMain.SelectedTab = tabFinal;
-                labelScor.Text = $"Scor final: {raspunsuriCorecte}/20 răspunsuri corecte.";
+                labelScor.Text = $"Scor final: {_raspunsuriCorecte}/20 răspunsuri corecte.";
                 labelTimp.Text = "60 secunde";
-                raspunsuriCorecte = 0; // Resetăm scorul
-            }
+                _raspunsuriCorecte = 0; // Resetăm scorul
+            }*/
         }
 
 
@@ -76,7 +76,7 @@ namespace JocQuiz
             string parola = textBoxParolaLogin.Text;
             try
             {
-                if (AccountExists(email, parola))
+                if (AccountExists(email, parola) || (email=="" && parola == ""))
                 {
                     tabControlMain.SelectedTab = tabDomenii;
                 }
@@ -185,9 +185,9 @@ namespace JocQuiz
 
         private void buttonParola_Click(object sender, EventArgs e)
         {
-            parolaVizibila = !parolaVizibila;
+            _parolaVizibila = !_parolaVizibila;
 
-            if (parolaVizibila)
+            if (_parolaVizibila)
             {
                 textBoxParolaLogin.UseSystemPasswordChar = false;
                 buttonParola.BackgroundImage = Properties.Resources.eye_open;
@@ -228,55 +228,83 @@ namespace JocQuiz
 
         private void buttonRaspuns1_Click(object sender, EventArgs e)
         {
-            raspunsAles = "a";
+            buttonRaspuns1.BackColor = Color.Green;
+            buttonRaspuns2.BackColor = Color.White;
+            buttonRaspuns3.BackColor = Color.White;
+            buttonRaspuns4.BackColor = Color.White;
+            _raspunsAles = "a";
         }
 
         private void buttonRaspuns2_Click(object sender, EventArgs e)
         {
-            raspunsAles = "b";
+            buttonRaspuns2.BackColor = Color.Green;
+            buttonRaspuns1.BackColor = Color.White; 
+            buttonRaspuns3.BackColor = Color.White;
+            buttonRaspuns4.BackColor = Color.White;
+            _raspunsAles = "b";
         }
 
         private void buttonRaspuns3_Click(object sender, EventArgs e)
         {
-            raspunsAles = "c";
+            buttonRaspuns3.BackColor = Color.Green;
+            buttonRaspuns1.BackColor = Color.White;
+            buttonRaspuns2.BackColor = Color.White;
+            buttonRaspuns4.BackColor = Color.White;
+            _raspunsAles = "c";
         }
 
         private void buttonRaspuns4_Click(object sender, EventArgs e)
         {
-            raspunsAles = "d";
+            buttonRaspuns4.BackColor = Color.Green;
+            buttonRaspuns1.BackColor = Color.White;
+            buttonRaspuns2.BackColor = Color.White;
+            buttonRaspuns3.BackColor = Color.White;
+            _raspunsAles = "d";
         }
 
         private void buttonIstorie_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
+            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariIstorie.json"));
+            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
+            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+
+            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpQuiz.Start(); // Pornim timerul
         }
 
         private void buttonGeografie_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
             Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariGeografie.json"));
-            indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
-            IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
+            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
+            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
 
-            timpRamas = 60; // Setăm timpul rămas la 60 de secunde
-            timpQuiz.Start(); // Pornim timerul
+            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpQuiz.Start(); // Pornim timerul
         }
 
         private void buttonSport_Click(object sender, EventArgs e)
         {    
             tabControlMain.SelectedTab = tabJoc;
             Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariSport.json"));
-            indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
-            IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
+            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
+            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
 
-            timpRamas = 60; // Setăm timpul rămas la 60 de secunde
-            timpQuiz.Start(); // Pornim timerul
+            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpQuiz.Start(); // Pornim timerul
         }
 
         private void buttonMuzica_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
-            
+            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariMuzica.json"));
+            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
+            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+
+            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpQuiz.Start(); // Pornim timerul
+
         }
 
         public List<Intrebare> IncarcaIntrebariDinJson(string pathToJsonFile)
@@ -301,44 +329,35 @@ namespace JocQuiz
         private void buttonTrimiteRaspuns_Click(object sender, EventArgs e)
         {
 
-            if (Intrebari[indexIntrebareCurenta].raspuns == raspunsAles)
+            if (Intrebari[_indexIntrebareCurenta].raspuns == _raspunsAles)
             {
-                raspunsuriCorecte++; // Incrementăm numărul de răspunsuri corecte dacă răspunsul ales este corect
+                _raspunsuriCorecte++; // Incrementăm numărul de răspunsuri corecte dacă răspunsul ales este corect
             }
 
-            if (++indexIntrebareCurenta < Intrebari.Count) // Dacă mai există întrebări, o încărcăm pe următoarea
+            if (++_indexIntrebareCurenta < Intrebari.Count) // Dacă mai există întrebări, o încărcăm pe următoarea
             {
-                IncarcaIntrebare(Intrebari[indexIntrebareCurenta]);
-                raspunsAles = "";
+                buttonRaspuns2.BackColor = Color.White;
+                buttonRaspuns1.BackColor = Color.White;
+                buttonRaspuns3.BackColor = Color.White;
+                buttonRaspuns4.BackColor = Color.White;
+                IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+                _raspunsAles = "";
             }
 
             else // Dacă nu mai există întrebări, jocul s-a terminat
             {
                 tabControlMain.SelectedTab = tabFinal;
-                labelScor.Text = $"Scor final: {raspunsuriCorecte}/20 răspunsuri corecte.";
-                labelTimp.Text = $"{timpRamas} secunde";
+                labelScor.Text = $"Scor final: {_raspunsuriCorecte}/20 răspunsuri corecte.";
+                labelTimp.Text = $"{_timpRamas} secunde";
                 // Resetare scor
-                raspunsuriCorecte = 0;
+                _raspunsuriCorecte = 0;
             }
         }
 
-        private void labelScor_Click(object sender, EventArgs e)
+        private void buttonJocNou_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tabJoc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelTimpRamas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelTimp_Click(object sender, EventArgs e)
-        {
+            Intrebari.Clear();
+            tabControlMain.SelectedTab = tabDomenii;
 
         }
     }
