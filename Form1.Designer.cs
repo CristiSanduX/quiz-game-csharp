@@ -65,7 +65,7 @@ namespace JocQuiz
             this.buttonGeografie = new System.Windows.Forms.Button();
             this.buttonIstorie = new System.Windows.Forms.Button();
             this.tabJoc = new System.Windows.Forms.TabPage();
-            this.labelTimpRamas = new System.Windows.Forms.Label();
+            this.labelTimpScurs = new System.Windows.Forms.Label();
             this.buttonTrimiteRaspuns = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -499,7 +499,7 @@ namespace JocQuiz
             // tabJoc
             // 
             this.tabJoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabJoc.Controls.Add(this.labelTimpRamas);
+            this.tabJoc.Controls.Add(this.labelTimpScurs);
             this.tabJoc.Controls.Add(this.buttonTrimiteRaspuns);
             this.tabJoc.Controls.Add(this.label15);
             this.tabJoc.Controls.Add(this.label14);
@@ -518,15 +518,16 @@ namespace JocQuiz
             this.tabJoc.TabIndex = 3;
             this.tabJoc.Text = "Joc";
             // 
-            // labelTimpRamas
+            // labelTimpScurs
             // 
-            this.labelTimpRamas.AutoSize = true;
-            this.labelTimpRamas.Location = new System.Drawing.Point(26, 21);
-            this.labelTimpRamas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelTimpRamas.Name = "labelTimpRamas";
-            this.labelTimpRamas.Size = new System.Drawing.Size(113, 17);
-            this.labelTimpRamas.TabIndex = 11;
-            this.labelTimpRamas.Text = "Timp: 0 secunde";
+            this.labelTimpScurs.AutoSize = true;
+            this.labelTimpScurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimpScurs.Location = new System.Drawing.Point(26, 21);
+            this.labelTimpScurs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTimpScurs.Name = "labelTimpScurs";
+            this.labelTimpScurs.Size = new System.Drawing.Size(132, 18);
+            this.labelTimpScurs.TabIndex = 11;
+            this.labelTimpScurs.Text = "Timp: 0 secunde";
             // 
             // buttonTrimiteRaspuns
             // 
@@ -667,7 +668,7 @@ namespace JocQuiz
             // 
             this.buttonJocNou.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonJocNou.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonJocNou.Location = new System.Drawing.Point(1016, 477);
+            this.buttonJocNou.Location = new System.Drawing.Point(904, 636);
             this.buttonJocNou.Name = "buttonJocNou";
             this.buttonJocNou.Size = new System.Drawing.Size(163, 57);
             this.buttonJocNou.TabIndex = 7;
@@ -678,7 +679,7 @@ namespace JocQuiz
             // labelScor
             // 
             this.labelScor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScor.Location = new System.Drawing.Point(339, 310);
+            this.labelScor.Location = new System.Drawing.Point(383, 158);
             this.labelScor.Name = "labelScor";
             this.labelScor.Size = new System.Drawing.Size(568, 75);
             this.labelScor.TabIndex = 6;
@@ -688,7 +689,7 @@ namespace JocQuiz
             // 
             this.labelTimp.AutoSize = true;
             this.labelTimp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTimp.Location = new System.Drawing.Point(424, 254);
+            this.labelTimp.Location = new System.Drawing.Point(506, 110);
             this.labelTimp.Name = "labelTimp";
             this.labelTimp.Size = new System.Drawing.Size(41, 29);
             this.labelTimp.TabIndex = 5;
@@ -698,7 +699,7 @@ namespace JocQuiz
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(338, 254);
+            this.label11.Location = new System.Drawing.Point(383, 110);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 29);
             this.label11.TabIndex = 3;
@@ -708,7 +709,7 @@ namespace JocQuiz
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(403, 112);
+            this.label10.Location = new System.Drawing.Point(380, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(344, 44);
             this.label10.TabIndex = 2;
@@ -738,7 +739,7 @@ namespace JocQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 675);
+            this.ClientSize = new System.Drawing.Size(1245, 779);
             this.Controls.Add(this.tabControlMain);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -822,7 +823,7 @@ namespace JocQuiz
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonTrimiteRaspuns;
-        private System.Windows.Forms.Label labelTimpRamas;
+        private System.Windows.Forms.Label labelTimpScurs;
         private System.Windows.Forms.Button buttonJocNou;
     }
 }

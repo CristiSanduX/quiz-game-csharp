@@ -1,38 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
 using System.IO;
 using Newtonsoft.Json;
-using System.Text.RegularExpressions;
 
 namespace JocQuiz
 {
     public partial class Form1 : Form
     {
         private bool _parolaVizibila = false;
-        private List<Intrebare> Intrebari = new List<Intrebare>(20);
-        private int _indexIntrebareCurenta = 0;
         private int _raspunsuriCorecte = 0;
         private string _raspunsAles = "";
         private Timer _timpQuiz;
-        private int _timpRamas;
-
-
-
-        // Validare adresă de e-mail
-        string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-
-        // Validare parolă cu cel puțin 8 caractere
-        string parolaPattern = @".{8,}";
-
-        static string numeFisier = @"../../utilizatori.json";
+        private int _timpScurs;
+        private LogIn _login;
+        private SignUp _signUp;
+        private Topics _topics;
 
         public Form1()
         {
@@ -53,20 +37,8 @@ namespace JocQuiz
 
         private void TimpQuizTick(object sender, EventArgs e)
         {
-            _timpRamas++; // Scădem timpul rămas
-                         // Afișăm timpul rămas undeva pe formă, de exemplu într-un Label
-                         // Presupunem că avem un Label numit label_timpRamas
-            labelTimpRamas.Text = $"Timp: {_timpRamas} secunde";
-
-           /* if (_timpRamas == 0)
-            {
-                // Dacă timpul a expirat, oprim timerul și afișăm scorul final
-                _timpQuiz.Stop();
-                tabControlMain.SelectedTab = tabFinal;
-                labelScor.Text = $"Scor final: {_raspunsuriCorecte}/20 răspunsuri corecte.";
-                labelTimp.Text = "60 secunde";
-                _raspunsuriCorecte = 0; // Resetăm scorul
-            }*/
+            _timpScurs++; 
+            labelTimpScurs.Text = $"Timp: {_timpScurs} secunde";
         }
 
 
@@ -74,9 +46,10 @@ namespace JocQuiz
         {
             string email = textBoxEmailLogin.Text;
             string parola = textBoxParolaLogin.Text;
+            _login = new LogIn(email, parola);
             try
             {
-                if (AccountExists(email, parola) || (email=="" && parola == ""))
+                if (_login.AccountExists() || (email=="" && parola == ""))
                 {
                     tabControlMain.SelectedTab = tabDomenii;
                 }
@@ -117,65 +90,11 @@ namespace JocQuiz
                 string email = textBoxEmailInregist.Text;
                 string parola = textBoxParolaInregist.Text;
 
+                _signUp = new SignUp(email, nume, parola);
+                _signUp.CreateAccount();
 
-                if (!Regex.IsMatch(email, emailPattern))
-                {
-                    throw new Exception("Adresa de e-mail introdusă nu este validă.");
-                }
-                else if (!Regex.IsMatch(parola, parolaPattern))
-                {
-                    throw new Exception("Parola trebuie să aibă cel puțin 8 caractere.");
-                }
-                else if (string.IsNullOrWhiteSpace(nume) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(parola))
-                {
-                    throw new Exception("Vă rugăm să completați toate câmpurile.");
-                }
-                else
-                {
-                    // Verificăm dacă fișierul utilizatori.json există deja
-                    if (!File.Exists(numeFisier))
-                    {
-                        // Dacă nu există, creăm un nou fișier JSON cu obiectul Utilizator serializat
-                        Utilizator utilizator = new Utilizator()
-                        {
-                            Nume = nume,
-                            Email = email,
-                            Parola = parola
-                        };
-                        //if()
-                        string json = System.Text.Json.JsonSerializer.Serialize(utilizator);
-                        File.WriteAllText(numeFisier, json);
-                    }
-                    else
-                    {
-                        // Dacă fișierul există deja, încărcăm datele vechi
-                        string jsonVechi = File.ReadAllText(numeFisier);
-                        List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
-
-                        bool utilizatorExistent = utilizatori.Any(u => u.Email == email);
-                        if (utilizatorExistent)
-                        {
-                            throw new Exception("Exista deja un utilizator cu acest email.");
-                        }
-                        else
-                        {
-                            // Adăugăm datele noi la lista de utilizatori
-                            utilizatori.Add(new Utilizator
-                            {
-                                Nume = nume,
-                                Email = email,
-                                Parola = parola
-                            });
-
-                            // Serializăm lista actualizată și rescriem fișierul JSON
-                            string jsonNou = JsonConvert.SerializeObject(utilizatori, Formatting.Indented);
-                            File.WriteAllText(numeFisier, jsonNou);
-                        }
-                    }
-
-                    MessageBox.Show("Contul a fost creat cu succes!");
-                    tabControlMain.SelectedTab = tabLogin;
-                }
+                MessageBox.Show("Contul a fost creat cu succes!");
+                tabControlMain.SelectedTab = tabLogin;
             }
             catch(Exception k)
             {
@@ -199,32 +118,6 @@ namespace JocQuiz
             }
         }
 
-        public bool AccountExists(string email, string parola)
-        {
-            string numeFisier = @"../../utilizatori.json";
-            // Verificăm dacă fișierul utilizatori.json există
-            if (!File.Exists(numeFisier))
-            {
-                MessageBox.Show("Fișierul utilizatori.json nu există.", "Eroare");
-                return false;
-            }
-
-            // Încărcăm conținutul fișierului utilizatori.json
-            string json = File.ReadAllText(numeFisier);
-            Console.WriteLine(json);
-
-            // Deserializăm lista de utilizatori din fișierul JSON
-            List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(json);
-
-            // Verificăm dacă există un utilizator cu email și parola introduse
-            bool utilizatorExistent = utilizatori.Any(u => u.Email == email && u.Parola == parola);
-
-            return utilizatorExistent;
-        }
-
-       
-         
- 
 
         private void buttonRaspuns1_Click(object sender, EventArgs e)
         {
@@ -265,44 +158,41 @@ namespace JocQuiz
         private void buttonIstorie_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
-            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariIstorie.json"));
-            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
-            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+            _topics = new Istorie();
+            IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
 
-            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpScurs = 0; // Setăm timpul rămas la 60 de secunde
             _timpQuiz.Start(); // Pornim timerul
         }
 
         private void buttonGeografie_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
-            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariGeografie.json"));
-            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
-            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+            _topics = new Geografie();
+            IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
 
-            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpScurs = 0; // Setăm timpul rămas la 60 de secunde
             _timpQuiz.Start(); // Pornim timerul
         }
 
         private void buttonSport_Click(object sender, EventArgs e)
         {    
             tabControlMain.SelectedTab = tabJoc;
-            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariSport.json"));
-            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
-            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+            _topics = new Sport();
+            IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
 
-            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            _timpScurs = 0; // Setăm timpul rămas la 60 de secunde
             _timpQuiz.Start(); // Pornim timerul
         }
 
         private void buttonMuzica_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabJoc;
-            Intrebari.AddRange(IncarcaIntrebariDinJson("../../IntrebariQuiz/IntrebariMuzica.json"));
-            _indexIntrebareCurenta = 0; // setarea indexului întrebării curente la 0
-            IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+            _topics = new Muzica();
 
-            _timpRamas = 0; // Setăm timpul rămas la 60 de secunde
+            IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
+
+            _timpScurs = 0; // Setăm timpul rămas la 60 de secunde
             _timpQuiz.Start(); // Pornim timerul
 
         }
@@ -329,18 +219,18 @@ namespace JocQuiz
         private void buttonTrimiteRaspuns_Click(object sender, EventArgs e)
         {
 
-            if (Intrebari[_indexIntrebareCurenta].raspuns == _raspunsAles)
+            if (_topics.intrebari[_topics.indexIntrebareCurenta].raspuns == _raspunsAles)
             {
                 _raspunsuriCorecte++; // Incrementăm numărul de răspunsuri corecte dacă răspunsul ales este corect
             }
 
-            if (++_indexIntrebareCurenta < Intrebari.Count) // Dacă mai există întrebări, o încărcăm pe următoarea
+            if (++(_topics.indexIntrebareCurenta) < _topics.intrebari.Count) // Dacă mai există întrebări, o încărcăm pe următoarea
             {
                 buttonRaspuns2.BackColor = Color.White;
                 buttonRaspuns1.BackColor = Color.White;
                 buttonRaspuns3.BackColor = Color.White;
                 buttonRaspuns4.BackColor = Color.White;
-                IncarcaIntrebare(Intrebari[_indexIntrebareCurenta]);
+                IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
                 _raspunsAles = "";
             }
 
@@ -348,7 +238,7 @@ namespace JocQuiz
             {
                 tabControlMain.SelectedTab = tabFinal;
                 labelScor.Text = $"Scor final: {_raspunsuriCorecte}/20 răspunsuri corecte.";
-                labelTimp.Text = $"{_timpRamas} secunde";
+                labelTimp.Text = $"{_timpScurs} secunde";
                 // Resetare scor
                 _raspunsuriCorecte = 0;
             }
@@ -356,9 +246,7 @@ namespace JocQuiz
 
         private void buttonJocNou_Click(object sender, EventArgs e)
         {
-            Intrebari.Clear();
             tabControlMain.SelectedTab = tabDomenii;
-
         }
     }
 }
