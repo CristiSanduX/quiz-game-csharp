@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace JocQuiz
 {
@@ -17,6 +18,11 @@ namespace JocQuiz
         private LogIn _login;
         private SignUp _signUp;
         private Topics _topics;
+        private Score _score = new Score();
+        private HighScoreObserver _highScoreObserver = new HighScoreObserver();
+        private string _caleHighScore;
+
+        private string _nume;
 
         public Form1()
         {
@@ -33,6 +39,7 @@ namespace JocQuiz
             _timpQuiz.Interval = 1000; // 1 secunda
             _timpQuiz.Tick += TimpQuizTick;
 
+            _score.RegisterObserver(_highScoreObserver);
         }
 
         private void TimpQuizTick(object sender, EventArgs e)
@@ -52,6 +59,7 @@ namespace JocQuiz
                 if (_login.AccountExists() || (email=="" && parola == ""))
                 {
                     tabControlMain.SelectedTab = tabDomenii;
+                    _nume = _login.nume;
                 }
                 else
                 {
@@ -90,7 +98,7 @@ namespace JocQuiz
                 string email = textBoxEmailInregist.Text;
                 string parola = textBoxParolaInregist.Text;
 
-                _signUp = new SignUp(email, nume, parola);
+                _signUp = new SignUp(email, _nume, parola);
                 _signUp.CreateAccount();
 
                 MessageBox.Show("Contul a fost creat cu succes!");
@@ -157,6 +165,7 @@ namespace JocQuiz
 
         private void buttonIstorie_Click(object sender, EventArgs e)
         {
+            _caleHighScore = @"../../HighScoreIstorie.json";
             tabControlMain.SelectedTab = tabJoc;
             _topics = new Istorie();
             IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
@@ -167,6 +176,7 @@ namespace JocQuiz
 
         private void buttonGeografie_Click(object sender, EventArgs e)
         {
+            _caleHighScore = @"../../HighScoreGeografie.json";
             tabControlMain.SelectedTab = tabJoc;
             _topics = new Geografie();
             IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
@@ -176,7 +186,8 @@ namespace JocQuiz
         }
 
         private void buttonSport_Click(object sender, EventArgs e)
-        {    
+        {
+            _caleHighScore = @"../../HighScoreSport.json";
             tabControlMain.SelectedTab = tabJoc;
             _topics = new Sport();
             IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
@@ -187,6 +198,7 @@ namespace JocQuiz
 
         private void buttonMuzica_Click(object sender, EventArgs e)
         {
+            _caleHighScore = @"../../HighScoreMuzica.json";
             tabControlMain.SelectedTab = tabJoc;
             _topics = new Muzica();
 
@@ -240,6 +252,8 @@ namespace JocQuiz
                 labelScor.Text = $"Scor final: {_raspunsuriCorecte}/20 răspunsuri corecte.";
                 labelTimp.Text = $"{_timpScurs} secunde";
                 // Resetare scor
+                _score.NotifyObservers(_raspunsuriCorecte, _timpScurs, _nume, _caleHighScore);
+                ShowTabelaPunctaj();
                 _raspunsuriCorecte = 0;
             }
         }
@@ -247,6 +261,37 @@ namespace JocQuiz
         private void buttonJocNou_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabDomenii;
+        }
+
+        private void ShowTabelaPunctaj() 
+        {
+            try
+            {
+                if (!File.Exists(_caleHighScore))
+                {
+                    throw new Exception("Fișierul utilizatori.json nu există.");
+                }
+                string json = File.ReadAllText(_caleHighScore);
+
+                List<Score> scoruri = System.Text.Json.JsonSerializer.Deserialize<List<Score>>(json);
+                scoruri = scoruri.OrderByDescending(s => s.scor).ThenBy(s => s.timp).ToList();
+                string text = "Nume"+ "   " + "Scor" + "    " + "Timp\n";
+                int count = 5;
+                foreach(var scor in scoruri)
+                {
+                    if (count == 0)
+                        break;
+                    text += scor.nume + "   " + scor.scor + "            " + scor.timp;
+                    text += '\n';
+                    count--;
+                }
+                labelHighScore.Text = text;
+            }
+            catch(Exception k)
+            {
+                MessageBox.Show(k.Message, "Eroare");
+            }
+
         }
     }
 }
