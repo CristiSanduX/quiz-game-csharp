@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace JocQuiz
+namespace Login
 {
     public class SignUp
     {
@@ -58,14 +58,14 @@ namespace JocQuiz
                     Email = _email,
                     Parola = _parola
                 };
-                string json = System.Text.Json.JsonSerializer.Serialize(utilizator);
+                string json = JsonConvert.SerializeObject(utilizator, Formatting.Indented);
                 File.WriteAllText(_numeFisier, json);
             }
             else
             {
                 // Dacă fișierul există deja, încărcăm datele vechi
                 string jsonVechi = File.ReadAllText(_numeFisier);
-                List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(jsonVechi);
+                List<Utilizator> utilizatori = JsonConvert.DeserializeObject<List<Utilizator>>(jsonVechi);
 
                 bool utilizatorExistent = utilizatori.Any(u => u.Email == _email);
                 if (utilizatorExistent)

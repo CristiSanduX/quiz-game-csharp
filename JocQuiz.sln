@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JocQuiz", "JocQuiz.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{94CBE565-863F-410C-A011-8B4D61A7A4AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{3F877D0A-818D-4CFC-B0E5-DF4FC4B126BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94CBE565-863F-410C-A011-8B4D61A7A4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94CBE565-863F-410C-A011-8B4D61A7A4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94CBE565-863F-410C-A011-8B4D61A7A4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F877D0A-818D-4CFC-B0E5-DF4FC4B126BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F877D0A-818D-4CFC-B0E5-DF4FC4B126BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F877D0A-818D-4CFC-B0E5-DF4FC4B126BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F877D0A-818D-4CFC-B0E5-DF4FC4B126BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

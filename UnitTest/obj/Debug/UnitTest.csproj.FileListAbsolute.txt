@@ -37,3 +37,5 @@ D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\UnitTest\obj\Debug\UnitTest.cspro
 D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
 D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\UnitTest\obj\Debug\UnitTest.dll
 D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\UnitTest\obj\Debug\UnitTest.pdb
+D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\UnitTest\bin\Debug\Login.dll
+D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\UnitTest\bin\Debug\Login.pdb

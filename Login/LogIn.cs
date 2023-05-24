@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace JocQuiz
+namespace Login
 {
     public class LogIn
     {
@@ -19,7 +22,7 @@ namespace JocQuiz
 
         public bool AccountExists()
         {
-            
+
             // Verificăm dacă fișierul utilizatori.json există
             if (!File.Exists(_numeFisier))
             {
@@ -30,7 +33,7 @@ namespace JocQuiz
             string json = File.ReadAllText(_numeFisier);
 
             // Deserializăm lista de utilizatori din fișierul JSON
-            List<Utilizator> utilizatori = System.Text.Json.JsonSerializer.Deserialize<List<Utilizator>>(json);
+            List<Utilizator> utilizatori = JsonConvert.DeserializeObject<List<Utilizator>>(json);
 
             // Verificăm dacă există un utilizator cu email și parola introduse
             bool utilizatorExistent = utilizatori.Any(u => u.Email == _email && u.Parola == _parola);

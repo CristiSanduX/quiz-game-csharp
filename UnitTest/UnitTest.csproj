@@ -64,6 +64,10 @@
       <Project>{9bd73c07-f1f6-4226-aa7f-4c16b51a4b5e}</Project>
       <Name>JocQuiz</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Login\Login.csproj">
+      <Project>{3F877D0A-818D-4CFC-B0E5-DF4FC4B126BA}</Project>
+      <Name>Login</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
