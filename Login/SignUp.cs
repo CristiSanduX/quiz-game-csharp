@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace JocQuiz
 {
-    class SignUp
+    public class SignUp
     {
         private string _email;
         private string _nume;

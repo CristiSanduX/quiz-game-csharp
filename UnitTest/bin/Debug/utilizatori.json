@@ -1,0 +1,37 @@
+[
+  {
+    "Nume": "admin",
+    "Email": "admin@gmail.com",
+    "Parola": "admin"
+  },
+  {
+    "Nume": "sebastian",
+    "Email": "sebi12@yahoo.ro",
+    "Parola": "parolatare"
+  },
+  {
+    "Nume": "George",
+    "Email": "george@gmail.com",
+    "Parola": "12345678"
+  },
+  {
+    "Nume": "tarciziu",
+    "Email": "tarci@gmail.com",
+    "Parola": "12345678"
+  },
+  {
+    "Nume": "Diana",
+    "Email": "diana@yahoo.com",
+    "Parola": "diana123"
+  },
+  {
+    "Nume": "Diana",
+    "Email": "diana@yahoo.ro",
+    "Parola": "diana123"
+  },
+  {
+    "Nume": "Sebi",
+    "Email": "sebi147852@yahoo.ro",
+    "Parola": "sebi1234"
+  }
+]

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace JocQuiz
 {
-    internal class Utilizator
+    public class Utilizator
     {
         public string Nume { get; set; }
         public string Email { get; set; }

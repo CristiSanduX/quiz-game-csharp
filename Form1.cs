@@ -209,13 +209,6 @@ namespace JocQuiz
 
         }
 
-        public List<Intrebare> IncarcaIntrebariDinJson(string pathToJsonFile)
-        {
-            string json = File.ReadAllText(pathToJsonFile);
-            List<Intrebare> intrebari = JsonConvert.DeserializeObject<List<Intrebare>>(json);
-            return intrebari;
-        }
-
         public void IncarcaIntrebare(Intrebare intrebare)
         {
             // Afisam intrebarea in label
@@ -269,7 +262,7 @@ namespace JocQuiz
             {
                 if (!File.Exists(_caleHighScore))
                 {
-                    throw new Exception("Fișierul utilizatori.json nu există.");
+                    throw new Exception("Fișierul "+_caleHighScore+".json nu există.");
                 }
                 string json = File.ReadAllText(_caleHighScore);
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JocQuiz
 {
-    class HighScoreObserver : IScoreObserver
+    public class HighScoreObserver : IScoreObserver
     {
         public void UpdateScore(int punctaj, int timpScurs, string numeJucator, string numeFisier)
         {
