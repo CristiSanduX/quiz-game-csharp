@@ -1,0 +1,204 @@
+[
+    {
+      "intrebare": "1. Cine a fost primul președinte al Statelor Unite ale Americii?",
+      "variante": [
+	"George Washington", 
+	"Thomas Jefferson",
+	"Abraham Lincoln",
+	"John F. Kennedy"
+	],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "2. Care a fost capitala Imperiului Roman?",
+      "variante": [
+	"Atena", 
+	"Roma", 
+	"Constantinopol",
+	"Cartagina"
+	],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "3. Care eveniment a marcat începutul Primului Război Mondial?",
+      "variante": [
+        "Atacul de la Pearl Harbor",
+        "Asasinarea lui Franz Ferdinand",
+        "Semnarea Tratatului de la Versailles",
+        "Invazia Poloniei"
+      ],
+      "raspuns": "b"
+    },
+  {
+      "intrebare": "4. Cine a fost liderul nazist al Germaniei în timpul celui de-Al Doilea Război Mondial?",
+      "variante": [
+        "Adolf Hitler",
+        "Benito Mussolini",
+        "Joseph Stalin",
+        "Winston Churchill"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "5. Care eveniment a marcat începutul Primului Război Mondial?",
+      "variante": [
+        "Atacul de la Pearl Harbor",
+        "Asasinarea lui Franz Ferdinand",
+        "Semnarea Tratatului de la Versailles",
+        "Invazia Poloniei"
+      ],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "6. Cine a condus Revoluția Rusă din 1917?",
+      "variante": [
+        "Vladimir Lenin",
+        "Joseph Stalin",
+        "Leon Trotsky",
+        "Mihail Gorbaciov"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "7. Când a avut loc Marea Criză Economică, cunoscută și sub numele de Criza de la Bursa din New York?",
+      "variante": [
+        "1929",
+        "1939",
+        "1945",
+        "1914"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "8. Care a fost primul om care a călcat pe Lună?",
+      "variante": [
+        "Neil Armstrong",
+        "Yuri Gagarin",
+        "Buzz Aldrin",
+        "Alan Shepard"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "9. Care țară a construit Marele Zid Chinezesc?",
+      "variante": [
+        "China",
+        "Japonia",
+        "India",
+        "Coreea de Nord"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "10. Cine a fost faimosul lider militar al armatei carthagineze în timpul Războaielor Punice?",
+      "variante": [
+        "Hannibal Barca",
+        "Julius Caesar",
+        "Alexander cel Mare",
+        "Spartacus"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "11. Care a fost primul rege al Angliei?",
+      "variante": [
+        "Henric al VIII-lea",
+        "Eduard I",
+        "William Cuceritorul",
+        "Richard al III-lea"
+      ],
+      "raspuns": "c"
+    },
+    {
+      "intrebare": "12. Când a avut loc Revoluția Franceză?",
+      "variante": [
+        "1789",
+        "1832",
+        "1848",
+        "1917"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "13. Care țară a fost prima care a colonizat America?",
+      "variante": [
+        "Spania",
+        "Franța",
+        "Anglia",
+        "Portugalia"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "14. Când a avut loc Bătălia de la Waterloo?",
+      "variante": [
+        "1815",
+        "1870",
+        "1799",
+        "1945"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "15. Cine a fost fondatorul Imperiului Mongol?",
+      "variante": [
+        "Genghis Khan",
+        "Kublai Khan",
+        "Tamerlan",
+        "Attila"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "16. Care a fost primul președinte al Republicii Populare Chineze?",
+      "variante": [
+        "Mao Zedong",
+        "Sun Yat-sen",
+        "Chiang Kai-shek",
+        "Deng Xiaoping"
+      ],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "17. Cine a fost regina Elisabeta I a Angliei?",
+      "variante": [
+        "Henric al VIII-lea",
+        "Maria Stuart",
+        "Victoria",
+        "Elizabeth al II-lea"
+      ],
+      "raspuns": "d"
+    },
+    {
+      "intrebare": "18. Când a avut loc Războiul de Independență al Statelor Unite?",
+      "variante": [
+        "1775-1783",
+        "1861-1865",
+        "1914-1918",
+        "1941-1945"
+      ],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "19. Care a fost numele primului om modern, Homo sapiens?",
+      "variante": [
+        "Neanderthalensis",
+        "Homo erectus",
+        "Homo habilis",
+        "Homo sapiens"
+      ],
+      "raspuns": "d"
+    },
+    {
+      "intrebare": "20. Cine a fost arhitectul celebrului Taj Mahal?",
+      "variante": [
+        "Michelangelo",
+        "Leonardo da Vinci",
+        "Shah Jahan",
+        "Emperor Qin Shi Huang"
+      ],
+      "raspuns": "c"
+    }
+]
+
+    

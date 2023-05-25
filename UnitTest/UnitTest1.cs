@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Moq;
+using System.Windows.Forms;
+using System.Threading;
+using System.Threading;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTest
 {
@@ -52,15 +56,6 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void VerificareExistaNume()
-        {
-            string email = "test@yahoo.ro";
-            string password = "test123";
-            Assert.ThrowsException<Exception>(() => new SignUp(email, null, password), "Adresa de e-mail introdusă nu este validă.");
-
-        }
-
-        [TestMethod]
         public void VerificareAccountExistent()
         {
             Assert.ThrowsException<Exception>(() => (new SignUp("sebi147852@yahoo.ro", "sebi1234", "Sebastian")).CreateAccount(), "Exista deja un utilizator cu acest email.");
@@ -102,6 +97,14 @@ namespace UnitTest
             string email = "test@yahoo.ro";
             string name = "Test";
             Assert.ThrowsException<Exception>(() => new SignUp(email, name, null), "Vă rugăm să completați toate câmpurile.");
+        }
+
+        [TestMethod]
+        public void VerificareExistaNume()
+        {
+            string email = "test@yahoo.ro";
+            string password = "test123";
+            Assert.ThrowsException<Exception>(() => new SignUp(email, null, password), "Vă rugăm să completați toate câmpurile.");
         }
 
         [TestMethod]
@@ -205,6 +208,92 @@ namespace UnitTest
             score.NotifyObservers(testScor, testTimp, testNume, testCaleHighScore);
 
             mockObserver.Verify(o => o.UpdateScore(testScor, testTimp, testNume, testCaleHighScore), Times.Once());
+        }
+
+        [TestMethod]
+        public void VerificareIncarcaIntrebare()
+        {
+            Form1 form1 = new Form1();
+            Intrebare intrebare = new Intrebare
+            {
+                intrebare = "Care este capitala Angliei?",
+                variante = new List<string> { "Londra", "Liverpool", "Rusia", "Manchester" },
+                raspuns = "Londra"
+            };
+
+            form1.IncarcaIntrebare(intrebare);
+
+            Assert.AreEqual("Care este capitala Angliei?", form1.GetIntrebareText());
+            Assert.AreEqual("Londra", form1.GetRaspunsText(1));
+            Assert.AreEqual("Liverpool", form1.GetRaspunsText(2));
+            Assert.AreEqual("Rusia", form1.GetRaspunsText(3));
+            Assert.AreEqual("Manchester", form1.GetRaspunsText(4));
+        }
+
+        [TestMethod]
+        public void VerificareButoaneRaspuns()
+        {
+            // Pentru butonul 1
+            Form1 form1 = new Form1();
+            form1.buttonRaspuns1_Click(null, EventArgs.Empty);
+            Assert.AreEqual("a", form1.GetRaspunsAles());
+
+            // Pentru butonul 2
+            Form1 form2 = new Form1();
+            form2.buttonRaspuns2_Click(null, EventArgs.Empty);
+            Assert.AreEqual("b", form2.GetRaspunsAles());
+
+            // Pentru butonul 3
+            Form1 form3 = new Form1();
+            form3.buttonRaspuns3_Click(null, EventArgs.Empty);
+            Assert.AreEqual("c", form3.GetRaspunsAles());
+
+            // Pentru butonul 4
+            Form1 form4 = new Form1();
+            form4.buttonRaspuns4_Click(null, EventArgs.Empty);
+            Assert.AreEqual("d", form4.GetRaspunsAles());
+        }
+
+
+        [TestMethod]
+        public void VerificareButonDomeniu()
+        {
+            Form1 form = new Form1();
+
+            form.buttonIstorie_Click(null, EventArgs.Empty);
+
+            TabPage tabJoc = form.tabControlMain.SelectedTab;
+            Assert.AreEqual("tabJoc", tabJoc.Name);
+        }
+
+        [TestMethod]
+        public void VerificareButonJocNou()
+        {
+            Form1 form = new Form1();
+
+            form.buttonJocNou_Click(null, EventArgs.Empty);
+
+            TabPage tabJoc = form.tabControlMain.SelectedTab;
+            Assert.AreEqual("tabDomenii", tabJoc.Name);
+        }
+
+        [TestMethod]
+        public void VerificareButonInapoiDomenii()
+        {
+            Form1 form = new Form1();
+            form.buttonInapoiDomenii_Click(null, EventArgs.Empty);
+            TabPage tabJoc = form.tabControlMain.SelectedTab;
+            Assert.AreEqual("tabLogin", tabJoc.Name);
+
+        }
+
+        [TestMethod]
+        public void VerificareButonInapoiInregistrare()
+        {
+            Form1 form = new Form1();
+            form.buttonInapoiInregist_Click(null, EventArgs.Empty);
+            TabPage tabJoc = form.tabControlMain.SelectedTab;
+            Assert.AreEqual("tabLogin", tabJoc.Name);
         }
 
     }

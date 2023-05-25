@@ -1,0 +1,102 @@
+[
+    {
+      "intrebare": "1. Cine este interpretul melodiei 'Shape of You'?",
+      "variante": ["Justin Bieber", "Ed Sheeran", "Bruno Mars", "Taylor Swift"],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "2. Care formație a lansat albumul 'Abbey Road'?",
+      "variante": ["The Rolling Stones", "Queen", "The Beatles", "Led Zeppelin"],
+      "raspuns": "c"
+    },
+    {
+      "intrebare": "3. Cine a câștigat premiul Grammy pentru 'Albumul anului' în 2021?",
+      "variante": ["Taylor Swift", "Billie Eilish", "Beyoncé", "Adele"],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "4. Ce instrument muzical este asociat cu Jimi Hendrix?",
+      "variante": ["Chitară electrică", "Tobe", "Pian", "Vioară"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "5. Cine a compus simfonia 'Simfonia a V-a'?",
+      "variante": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "6. Cine a interpretat hit-ul 'Bohemian Rhapsody'?",
+      "variante": ["The Rolling Stones", "Queen", "The Beatles", "Nirvana"],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "7. Care este numele complet al artistului care a cântat 'Thriller'?",
+      "variante": ["Michael Jackson", "Prince", "Elton John", "Stevie Wonder"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "8. Cine este cântăreața de muzică pop cunoscută pentru melodii precum 'Bad Romance' și 'Poker Face'?",
+      "variante": ["Katy Perry", "Lady Gaga", "Beyoncé", "Rihanna"],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "9. Care formație este cunoscută pentru hit-ul 'Stairway to Heaven'?",
+      "variante": ["AC/DC", "Led Zeppelin", "Pink Floyd", "The Who"],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "10. Cine este cântărețul principal al trupei U2?",
+      "variante": ["Bono", "Mick Jagger", "Bruce Springsteen", "Chris Martin"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "11. Care este cel mai bine vândut album din toate timpurile?",
+      "variante": ["'The Dark Side of the Moon' - Pink Floyd", "'Back in Black' - AC/DC", "'Thriller' - Michael Jackson", "'Rumours' - Fleetwood Mac"],
+      "raspuns": "c"
+    },
+    {
+      "intrebare": "12. Cine a compus opera 'Carmen'?",
+      "variante": ["Giuseppe Verdi", "Georges Bizet", "Richard Wagner", "Wolfgang Amadeus Mozart"],
+      "raspuns": "b"
+    },
+    {
+      "intrebare": "13. Cine este cântărețul principal al trupei Nirvana?",
+      "variante": ["Kurt Cobain", "Eddie Vedder", "Chris Cornell", "Dave Grohl"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "14. Care este numele formației fondată de Dave Grohl, fostul baterist al trupei Nirvana?",
+      "variante": ["Foo Fighters", "Pearl Jam", "Soundgarden", "Alice in Chains"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "15. Cine a scris și a interpretat melodia 'Imagine'?",
+      "variante": ["John Lennon", "Bob Dylan", "David Bowie", "Elvis Presley"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "16. Cine a interpretat hit-ul 'Hotel California'?",
+      "variante": ["Eagles", "Guns N' Roses", "Aerosmith", "Bon Jovi"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "17. Care este genul muzical asociat cu artistul Bob Marley?",
+      "variante": ["Reggae", "Hip-hop", "Jazz", "Country"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "18. Cine a câștigat premiul Grammy pentru 'Cel mai bun artist nou' în 2020?",
+      "variante": ["Billie Eilish", "Lizzo", "Lil Nas X", "Ariana Grande"],
+      "raspuns": "a"
+    },
+    {
+      "intrebare": "19. Care artist a lansat albumul 'Lemonade' în 2016?",
+      "variante": ["Rihanna", "Taylor Swift", "Beyoncé", "Katy Perry"],
+      "raspuns": "c"
+    },
+    {
+      "intrebare": "20. Cine este considerat 'Regele Pop'?",
+      "variante": ["Michael Jackson", "Elvis Presley", "Prince", "David Bowie"],
+      "raspuns": "a"
+    }
+  ]

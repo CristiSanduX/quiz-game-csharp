@@ -25,6 +25,32 @@ namespace JocQuiz
 
         private string _nume;
 
+        public string GetIntrebareText()
+        {
+            return labelIntrebare.Text;
+        }
+        public string GetRaspunsText(int numarButon)
+        {
+            switch (numarButon)
+            {
+                case 1:
+                    return buttonRaspuns1.Text;
+                case 2:
+                    return buttonRaspuns2.Text;
+                case 3:
+                    return buttonRaspuns3.Text;
+                case 4:
+                    return buttonRaspuns4.Text;
+                default:
+                    throw new ArgumentException("Numărul butonului trebuie să fie între 1 și 4.");
+            }
+        }
+        public string GetRaspunsAles()
+        {
+            return _raspunsAles;
+        }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -72,7 +98,7 @@ namespace JocQuiz
                 MessageBox.Show(k.Message, "Eroare");
             }
         }
-        private void buttonInapoiInregist_Click(object sender, EventArgs e)
+        internal void buttonInapoiInregist_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabLogin;
         }
@@ -85,7 +111,7 @@ namespace JocQuiz
             textBoxParolaInregist.Clear();
         }
 
-        private void buttonInapoiDomenii_Click(object sender, EventArgs e)
+        internal void buttonInapoiDomenii_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabLogin;
         }
@@ -128,7 +154,7 @@ namespace JocQuiz
         }
 
 
-        private void buttonRaspuns1_Click(object sender, EventArgs e)
+        internal void buttonRaspuns1_Click(object sender, EventArgs e)
         {
             buttonRaspuns1.BackColor = Color.Green;
             buttonRaspuns2.BackColor = Color.White;
@@ -137,7 +163,7 @@ namespace JocQuiz
             _raspunsAles = "a";
         }
 
-        private void buttonRaspuns2_Click(object sender, EventArgs e)
+        internal void buttonRaspuns2_Click(object sender, EventArgs e)
         {
             buttonRaspuns2.BackColor = Color.Green;
             buttonRaspuns1.BackColor = Color.White; 
@@ -146,7 +172,7 @@ namespace JocQuiz
             _raspunsAles = "b";
         }
 
-        private void buttonRaspuns3_Click(object sender, EventArgs e)
+        internal void buttonRaspuns3_Click(object sender, EventArgs e)
         {
             buttonRaspuns3.BackColor = Color.Green;
             buttonRaspuns1.BackColor = Color.White;
@@ -155,7 +181,7 @@ namespace JocQuiz
             _raspunsAles = "c";
         }
 
-        private void buttonRaspuns4_Click(object sender, EventArgs e)
+        internal void buttonRaspuns4_Click(object sender, EventArgs e)
         {
             buttonRaspuns4.BackColor = Color.Green;
             buttonRaspuns1.BackColor = Color.White;
@@ -164,7 +190,7 @@ namespace JocQuiz
             _raspunsAles = "d";
         }
 
-        private void buttonIstorie_Click(object sender, EventArgs e)
+        internal void buttonIstorie_Click(object sender, EventArgs e)
         {
             _caleHighScore = @"../../HighScoreIstorie.json";
             tabControlMain.SelectedTab = tabJoc;
@@ -175,7 +201,7 @@ namespace JocQuiz
             _timpQuiz.Start(); // Pornim timerul
         }
 
-        private void buttonGeografie_Click(object sender, EventArgs e)
+        internal void buttonGeografie_Click(object sender, EventArgs e)
         {
             _caleHighScore = @"../../HighScoreGeografie.json";
             tabControlMain.SelectedTab = tabJoc;
@@ -252,7 +278,7 @@ namespace JocQuiz
             }
         }
 
-        private void buttonJocNou_Click(object sender, EventArgs e)
+        internal void buttonJocNou_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabDomenii;
         }
@@ -285,6 +311,10 @@ namespace JocQuiz
             {
                 MessageBox.Show(k.Message, "Eroare");
             }
+        }
+
+        private void labelTimpScurs_Click(object sender, EventArgs e)
+        {
 
         }
     }
