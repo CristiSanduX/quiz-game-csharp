@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JocQuiz
 {
-    class Score
+    internal class Score
     {
         private int _scor;
         private int _timp;

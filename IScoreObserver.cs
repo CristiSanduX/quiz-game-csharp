@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JocQuiz
 {
-    interface IScoreObserver
+    public interface IScoreObserver
     {
         void UpdateScore(int score, int timp, string numeJucator, string caleHighScore);
     }

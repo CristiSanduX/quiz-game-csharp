@@ -6,3 +6,12 @@ D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\Login\bin\Debug\Newtonsoft.Json.x
 D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\Login\obj\Debug\Login.csproj.CopyComplete
 D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\Login\obj\Debug\Login.dll
 D:\An III\Semestrul II\IP\ProiectNou\ProiectIP\Login\obj\Debug\Login.pdb
+C:\Users\crist\Documents\ProiectIP\Login\bin\Debug\Login.dll
+C:\Users\crist\Documents\ProiectIP\Login\bin\Debug\Login.pdb
+C:\Users\crist\Documents\ProiectIP\Login\bin\Debug\Newtonsoft.Json.dll
+C:\Users\crist\Documents\ProiectIP\Login\bin\Debug\Newtonsoft.Json.xml
+C:\Users\crist\Documents\ProiectIP\Login\obj\Debug\Login.csproj.AssemblyReference.cache
+C:\Users\crist\Documents\ProiectIP\Login\obj\Debug\Login.csproj.CoreCompileInputs.cache
+C:\Users\crist\Documents\ProiectIP\Login\obj\Debug\Login.csproj.CopyComplete
+C:\Users\crist\Documents\ProiectIP\Login\obj\Debug\Login.dll
+C:\Users\crist\Documents\ProiectIP\Login\obj\Debug\Login.pdb

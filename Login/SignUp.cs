@@ -32,7 +32,11 @@ namespace Login
 
         private void VerificareCampuri()
         {
-            if (!Regex.IsMatch(_email, _emailPattern))
+            if (string.IsNullOrWhiteSpace(_nume) || string.IsNullOrWhiteSpace(_email) || string.IsNullOrWhiteSpace(_parola))
+            {
+                throw new Exception("Vă rugăm să completați toate câmpurile.");
+            }
+            else if (!Regex.IsMatch(_email, _emailPattern))
             {
                 throw new Exception("Adresa de e-mail introdusă nu este validă.");
             }
@@ -40,10 +44,7 @@ namespace Login
             {
                 throw new Exception("Parola trebuie să aibă cel puțin 8 caractere.");
             }
-            else if (string.IsNullOrWhiteSpace(_nume) || string.IsNullOrWhiteSpace(_email) || string.IsNullOrWhiteSpace(_parola))
-            {
-                throw new Exception("Vă rugăm să completați toate câmpurile.");
-            }
+            
         }
 
         public void CreateAccount()
