@@ -160,27 +160,38 @@ namespace JocQuiz
             }
         }
 
+
         /// <summary>
-        /// Metoda pentru butoanele de Raspuns.
-        /// Selectează răspunsul și schimbă culoarea butonului.
+        /// Metoda pentru butonul de Parolă.
+        /// Comută vizibilitatea parolei în textBoxParolaLogin și schimbă imaginea butonului în funcție de starea parolei.
         /// </summary>
         private void buttonParola_Click(object sender, EventArgs e)
         {
+            // Comută starea variabilei _parolaVizibila între true și false la fiecare apăsare a butonului
             _parolaVizibila = !_parolaVizibila;
 
+            // Dacă parola este vizibilă
             if (_parolaVizibila)
             {
+                // Setează proprietatea UseSystemPasswordChar ca fiind falsă pentru a face parola vizibilă
                 textBoxParolaLogin.UseSystemPasswordChar = false;
+                // Schimbă imaginea butonului cu o imagine reprezentând un ochi deschis
                 buttonParola.BackgroundImage = Properties.Resources.eye_open;
             }
-            else
+            else // Dacă parola nu este vizibilă
             {
+                // Setează proprietatea UseSystemPasswordChar ca fiind adevărată pentru a face parola invizibilă
                 textBoxParolaLogin.UseSystemPasswordChar = true;
+                // Schimbă imaginea butonului cu o imagine reprezentând un ochi închis
                 buttonParola.BackgroundImage = Properties.Resources.eye_closed;
             }
         }
 
 
+        /// <summary>
+        /// Metodele pentru butoanele de Raspuns.
+        /// Selectează răspunsul și schimbă culoarea butonului.
+        /// </summary>
         internal void buttonRaspuns1_Click(object sender, EventArgs e)
         {
             buttonRaspuns1.BackColor = Color.Green;
@@ -217,17 +228,35 @@ namespace JocQuiz
             _raspunsAles = "d";
         }
 
+        /// <summary>
+        /// Metodele pentru butoanele de domenii.
+        /// Inițiază jocul pentru domeniul Istorie, încarcă prima întrebare, setează timpul și pornește timerul.
+        /// </summary>
         internal void buttonIstorie_Click(object sender, EventArgs e)
         {
+            // Setează calea către fișierul de highscore specific domeniului Istorie
             _caleHighScore = @"../../HighScoreIstorie.json";
+
+            // Selectează tab-ul pentru joc
             tabControlMain.SelectedTab = tabJoc;
+
+            // Inițializează obiectul _topics pentru domeniul Istorie
             _topics = new Istorie();
+
+            // Încarcă prima întrebare în interfață
             IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
 
-            _timpScurs = 0; // Setăm timpul rămas la 60 de secunde
-            _timpQuiz.Start(); // Pornim timerul
+            // Setează timpul scurs la 0 (60 de secunde disponibile)
+            _timpScurs = 0;
+
+            // Porneste timerul pentru a contoriza timpul de joc
+            _timpQuiz.Start();
         }
 
+
+        /// <summary>
+        /// Inițiază jocul pentru domeniul Geografie, încarcă prima întrebare, setează timpul și pornește timerul.
+        /// </summary>
         internal void buttonGeografie_Click(object sender, EventArgs e)
         {
             _caleHighScore = @"../../HighScoreGeografie.json";
@@ -239,6 +268,9 @@ namespace JocQuiz
             _timpQuiz.Start(); // Pornim timerul
         }
 
+        /// <summary>
+        /// Inițiază jocul pentru domeniul Sport, încarcă prima întrebare, setează timpul și pornește timerul.
+        /// </summary>
         private void buttonSport_Click(object sender, EventArgs e)
         {
             _caleHighScore = @"../../HighScoreSport.json";
@@ -250,6 +282,9 @@ namespace JocQuiz
             _timpQuiz.Start(); // Pornim timerul
         }
 
+        /// <summary>
+        /// Inițiază jocul pentru domeniul Muzica, încarcă prima întrebare, setează timpul și pornește timerul.
+        /// </summary>
         private void buttonMuzica_Click(object sender, EventArgs e)
         {
             _caleHighScore = @"../../HighScoreMuzica.json";
@@ -263,21 +298,32 @@ namespace JocQuiz
 
         }
 
+        /// <summary>
+        /// Metoda pentru încărcarea unei întrebări în interfață.
+        /// Actualizează textul întrebării și variantele de răspuns în butoane.
+        /// </summary>
+        /// <param name="intrebare">Obiectul Intrebare care trebuie încărcat</param>
         public void IncarcaIntrebare(Intrebare intrebare)
         {
-            // Afisam intrebarea in label
+            // Actualizează textul întrebării în label-ul corespunzător
             labelIntrebare.Text = intrebare.intrebare;
 
-            // Incarcam variantele de raspuns in butoane
+            // Actualizează textele variantelor de răspuns în butoanele corespunzătoare
             buttonRaspuns1.Text = intrebare.variante[0];
             buttonRaspuns2.Text = intrebare.variante[1];
             buttonRaspuns3.Text = intrebare.variante[2];
             buttonRaspuns4.Text = intrebare.variante[3];
         }
 
+
+        /// <summary>
+        /// Metoda apelată atunci când utilizatorul dă clic pe butonul "Trimite Răspuns".
+        /// Verifică răspunsul ales de utilizator și actualizează interfața în consecință.
+        /// </summary>
+        /// <param name="sender">Obiectul care a generat evenimentul</param>
+        /// <param name="e">Argumentele evenimentului</param>
         private void buttonTrimiteRaspuns_Click(object sender, EventArgs e)
         {
-
             if (_topics.intrebari[_topics.indexIntrebareCurenta].raspuns == _raspunsAles)
             {
                 _raspunsuriCorecte++; // Incrementăm numărul de răspunsuri corecte dacă răspunsul ales este corect
@@ -285,46 +331,67 @@ namespace JocQuiz
 
             if (++(_topics.indexIntrebareCurenta) < _topics.intrebari.Count) // Dacă mai există întrebări, o încărcăm pe următoarea
             {
+                // Resetăm culorile butoanelor de răspuns la alb
                 buttonRaspuns2.BackColor = Color.White;
                 buttonRaspuns1.BackColor = Color.White;
                 buttonRaspuns3.BackColor = Color.White;
                 buttonRaspuns4.BackColor = Color.White;
+
+                // Încărcăm următoarea întrebare
                 IncarcaIntrebare(_topics.intrebari[_topics.indexIntrebareCurenta]);
                 _raspunsAles = "";
             }
-
             else // Dacă nu mai există întrebări, jocul s-a terminat
             {
+                // Selectăm tab-ul pentru afișarea scorului final
                 tabControlMain.SelectedTab = tabFinal;
+
+                // Actualizăm textul pentru scorul final și timpul
                 labelScor.Text = $"Scor final: {_raspunsuriCorecte}/20 răspunsuri corecte.";
                 labelTimp.Text = $"{_timpScurs} secunde";
-                // Resetare scor
+
+                // Resetăm scorul și notificăm observatorii (HighScoreObserver)
                 _score.NotifyObservers(_raspunsuriCorecte, _timpScurs, _nume, _caleHighScore);
+
+                // Afișăm tabela de punctaj
                 ShowTabelaPunctaj();
+
+                // Resetăm numărul de răspunsuri corecte
                 _raspunsuriCorecte = 0;
             }
         }
+
 
         internal void buttonJocNou_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabDomenii;
         }
 
-        private void ShowTabelaPunctaj() 
+        /// <summary>
+        /// Metoda pentru afișarea tabelului de punctaj.
+        /// </summary>
+        private void ShowTabelaPunctaj()
         {
             try
             {
                 if (!File.Exists(_caleHighScore))
                 {
-                    throw new Exception("Fișierul "+_caleHighScore+".json nu există.");
+                    throw new Exception("Fișierul " + _caleHighScore + ".json nu există.");
                 }
+
+                // Citim conținutul fișierului JSON
                 string json = File.ReadAllText(_caleHighScore);
 
+                // Deserializăm conținutul într-o listă de obiecte de tipul Score
                 List<Score> scoruri = System.Text.Json.JsonSerializer.Deserialize<List<Score>>(json);
+
+                // Sortăm scorurile descrescător după scor și apoi crescător după timp
                 scoruri = scoruri.OrderByDescending(s => s.scor).ThenBy(s => s.timp).ToList();
-                string text = "Nume"+ "   " + "Scor" + "    " + "Timp\n";
+
+                // Construim textul tabelului de punctaj
+                string text = "Nume" + "   " + "Scor" + "    " + "Timp\n";
                 int count = 5;
-                foreach(var scor in scoruri)
+                foreach (var scor in scoruri)
                 {
                     if (count == 0)
                         break;
@@ -332,17 +399,14 @@ namespace JocQuiz
                     text += '\n';
                     count--;
                 }
+
+                // Afișăm textul în eticheta labelHighScore
                 labelHighScore.Text = text;
             }
-            catch(Exception k)
+            catch (Exception k)
             {
                 MessageBox.Show(k.Message, "Eroare");
             }
-        }
-
-        private void labelTimpScurs_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

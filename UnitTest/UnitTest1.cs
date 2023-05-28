@@ -8,9 +8,6 @@ using System.IO;
 using System.Reflection;
 using Moq;
 using System.Windows.Forms;
-using System.Threading;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTest
 {

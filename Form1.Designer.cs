@@ -541,7 +541,6 @@ namespace JocQuiz
             this.labelTimpScurs.Size = new System.Drawing.Size(132, 18);
             this.labelTimpScurs.TabIndex = 11;
             this.labelTimpScurs.Text = "Timp: 0 secunde";
-            this.labelTimpScurs.Click += new System.EventHandler(this.labelTimpScurs_Click);
             // 
             // buttonTrimiteRaspuns
             // 
