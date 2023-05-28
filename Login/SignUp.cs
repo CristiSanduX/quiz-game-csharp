@@ -22,6 +22,13 @@ namespace Login
         // Validare parolă cu cel puțin 8 caractere
         private string _parolaPattern = @".{8,}";
 
+        /// <summary>
+        /// Constructor pentru clasa SignUp.
+        /// Inițializează emailul, numele și parola pentru instanța curentă și verifică validitatea acestora.
+        /// </summary>
+        /// <param name="email">Emailul utilizatorului.</param>
+        /// <param name="nume">Numele utilizatorului.</param>
+        /// <param name="parola">Parola utilizatorului.</param>
         public SignUp(string email, string nume, string parola)
         {
             _email = email;
@@ -30,6 +37,10 @@ namespace Login
             VerificareCampuri();
         }
 
+        /// <summary>
+        /// Verifică validitatea datelor introduse.
+        /// Aruncă o excepție dacă datele nu sunt valide.
+        /// </summary>
         private void VerificareCampuri()
         {
             if (string.IsNullOrWhiteSpace(_nume) || string.IsNullOrWhiteSpace(_email) || string.IsNullOrWhiteSpace(_parola))
@@ -44,9 +55,14 @@ namespace Login
             {
                 throw new Exception("Parola trebuie să aibă cel puțin 8 caractere.");
             }
-            
+
         }
 
+        /// <summary>
+        /// Creează un cont nou de utilizator.
+        /// Dacă fișierul nu există, acesta este creat.
+        /// Dacă fișierul există deja, noul utilizator este adăugat la listă.
+        /// </summary>
         public void CreateAccount()
         {
             // Verificăm dacă fișierul utilizatori.json există deja

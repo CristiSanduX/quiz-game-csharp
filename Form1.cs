@@ -11,6 +11,8 @@ namespace JocQuiz
 {
     public partial class Form1 : Form
     {
+        // Campurile private sunt utilizate pentru a gestiona starea jocului
+
         private bool _parolaVizibila = false;
         private int _raspunsuriCorecte = 0;
         private string _raspunsAles = "";
@@ -51,6 +53,10 @@ namespace JocQuiz
         }
 
 
+        /// <summary>
+        /// Constructor pentru Form1.
+        /// Inițializează elementele UI și setează configurațiile inițiale.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -69,13 +75,20 @@ namespace JocQuiz
             _score.RegisterObserver(_highScoreObserver);
         }
 
+        /// <summary>
+        /// Metoda care gestioneaza evenimentul Tick pentru _timpQuiz.
+        /// Actualizează timpul scurs și afișează în label-ul corespunzător.
+        /// </summary>
         private void TimpQuizTick(object sender, EventArgs e)
         {
             _timpScurs++; 
             labelTimpScurs.Text = $"Timp: {_timpScurs} secunde";
         }
 
-
+        /// <summary>
+        /// Metoda pentru butonul de Login.
+        /// Verifică dacă contul există și navighează către tabul cu domenii de quiz.
+        /// </summary>
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string email = textBoxEmailLogin.Text;
@@ -98,11 +111,17 @@ namespace JocQuiz
                 MessageBox.Show(k.Message, "Eroare");
             }
         }
+
+
         internal void buttonInapoiInregist_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabLogin;
         }
 
+        /// <summary>
+        /// Metoda pentru butonul de Înregistrare.
+        /// Navighează către tabul de înregistrare și curăță textbox-urile.
+        /// </summary>
         private void buttonInregistrare_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabInregistrare;
@@ -116,6 +135,10 @@ namespace JocQuiz
             tabControlMain.SelectedTab = tabLogin;
         }
 
+        /// <summary>
+        /// Metoda pentru butonul Adauga.
+        /// Crează un nou cont cu datele introduse și navighează înapoi la tabul de Login.
+        /// </summary>
         private void buttonAdauga_Click(object sender, EventArgs e)
         {
             try
@@ -137,6 +160,10 @@ namespace JocQuiz
             }
         }
 
+        /// <summary>
+        /// Metoda pentru butoanele de Raspuns.
+        /// Selectează răspunsul și schimbă culoarea butonului.
+        /// </summary>
         private void buttonParola_Click(object sender, EventArgs e)
         {
             _parolaVizibila = !_parolaVizibila;

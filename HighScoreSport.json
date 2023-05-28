@@ -3,5 +3,10 @@
     "scor": 0,
     "timp": 5,
     "nume": "Diana"
+  },
+  {
+    "scor": 9,
+    "timp": 234,
+    "nume": "Milica"
   }
 ]
