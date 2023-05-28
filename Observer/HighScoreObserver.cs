@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace JocQuiz
 {
@@ -20,13 +21,13 @@ namespace JocQuiz
                     timp = timpScurs,
                     nume = numeJucator
                 };
-                string json = System.Text.Json.JsonSerializer.Serialize(scor);
+                string json = JsonConvert.SerializeObject(scor);
                 File.WriteAllText(numeFisier, json);
             }
             else
             {
                 string jsonVechi = File.ReadAllText(numeFisier);
-                List<Score> scoruri = System.Text.Json.JsonSerializer.Deserialize<List<Score>>(jsonVechi);
+                List<Score> scoruri = JsonConvert.DeserializeObject<List<Score>>(jsonVechi);
 
                 scoruri.Add(new Score
                 {
@@ -35,7 +36,7 @@ namespace JocQuiz
                     nume = numeJucator
                 });
 
-                string jsonNou = JsonConvert.SerializeObject(scoruri, Formatting.Indented);
+                string jsonNou = JsonConvert.SerializeObject(scoruri, Newtonsoft.Json.Formatting.Indented);
                 File.WriteAllText(numeFisier, jsonNou);
             }
         }

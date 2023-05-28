@@ -84,3 +84,4 @@ C:\Users\crist\Documents\ProiectIP\UnitTest\bin\Debug\Castle.Core.dll
 C:\Users\crist\Documents\ProiectIP\UnitTest\bin\Debug\Moq.dll
 C:\Users\crist\Documents\ProiectIP\UnitTest\bin\Debug\Castle.Core.xml
 C:\Users\crist\Documents\ProiectIP\UnitTest\bin\Debug\Moq.xml
+C:\Users\crist\Documents\ProiectIP\UnitTest\bin\Debug\Observer.dll

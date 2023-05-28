@@ -1,0 +1,9 @@
+C:\Users\crist\Documents\ProiectIP\Observer\obj\Debug\Observer.csproj.AssemblyReference.cache
+C:\Users\crist\Documents\ProiectIP\Observer\obj\Debug\Observer.csproj.CoreCompileInputs.cache
+C:\Users\crist\Documents\ProiectIP\Observer\bin\Debug\Observer.dll
+C:\Users\crist\Documents\ProiectIP\Observer\bin\Debug\Observer.pdb
+C:\Users\crist\Documents\ProiectIP\Observer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\crist\Documents\ProiectIP\Observer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\crist\Documents\ProiectIP\Observer\obj\Debug\Observer.csproj.CopyComplete
+C:\Users\crist\Documents\ProiectIP\Observer\obj\Debug\Observer.dll
+C:\Users\crist\Documents\ProiectIP\Observer\obj\Debug\Observer.pdb

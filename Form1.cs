@@ -125,7 +125,7 @@ namespace JocQuiz
                 string email = textBoxEmailInregist.Text;
                 string parola = textBoxParolaInregist.Text;
 
-                _signUp = new SignUp(email, _nume, parola);
+                _signUp = new SignUp(email, nume, parola);
                 _signUp.CreateAccount();
 
                 MessageBox.Show("Contul a fost creat cu succes!");

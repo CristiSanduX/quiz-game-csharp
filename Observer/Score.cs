@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JocQuiz
 {
-    internal class Score
+    public class Score
     {
         private int _scor;
         private int _timp;
@@ -20,7 +20,7 @@ namespace JocQuiz
 
         public void NotifyObservers(int score, int timp, string nume, string caleHighScore)
         {
-            foreach(var observer in _observers)
+            foreach (var observer in _observers)
             {
                 observer.UpdateScore(score, timp, nume, caleHighScore);
             }
