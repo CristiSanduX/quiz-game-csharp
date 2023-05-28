@@ -87,6 +87,8 @@ namespace JocQuiz
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.buttonAbout = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tabLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,6 +123,8 @@ namespace JocQuiz
             // tabLogin
             // 
             this.tabLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabLogin.Controls.Add(this.buttonHelp);
+            this.tabLogin.Controls.Add(this.buttonAbout);
             this.tabLogin.Controls.Add(this.buttonParola);
             this.tabLogin.Controls.Add(this.label3);
             this.tabLogin.Controls.Add(this.pictureBox3);
@@ -159,7 +163,7 @@ namespace JocQuiz
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 28.2F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(497, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 60);
+            this.label3.Size = new System.Drawing.Size(137, 61);
             this.label3.TabIndex = 10;
             this.label3.Text = "Start";
             // 
@@ -368,7 +372,7 @@ namespace JocQuiz
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(128, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 32);
+            this.label4.Size = new System.Drawing.Size(192, 32);
             this.label4.TabIndex = 0;
             this.label4.Text = "Înregistrează";
             // 
@@ -443,7 +447,7 @@ namespace JocQuiz
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(173, 63);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(828, 32);
+            this.label6.Size = new System.Drawing.Size(829, 32);
             this.label6.TabIndex = 15;
             this.label6.Text = "Alegeți domeniul pentru care doriți să vă testați cunoștințele";
             // 
@@ -703,7 +707,7 @@ namespace JocQuiz
             this.label12.Location = new System.Drawing.Point(380, 233);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(227, 44);
+            this.label12.Size = new System.Drawing.Size(228, 44);
             this.label12.TabIndex = 8;
             this.label12.Text = "Top scoruri";
             // 
@@ -756,7 +760,7 @@ namespace JocQuiz
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(380, 26);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(336, 42);
+            this.label10.Size = new System.Drawing.Size(344, 44);
             this.label10.TabIndex = 2;
             this.label10.Text = "Jocul s-a încheiat!";
             // 
@@ -781,6 +785,31 @@ namespace JocQuiz
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
+            // 
+            // buttonAbout
+            // 
+            this.buttonAbout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonAbout.Location = new System.Drawing.Point(459, 423);
+            this.buttonAbout.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(136, 46);
+            this.buttonAbout.TabIndex = 12;
+            this.buttonAbout.Text = "About";
+            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonHelp.Location = new System.Drawing.Point(661, 423);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(136, 46);
+            this.buttonHelp.TabIndex = 13;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -874,6 +903,8 @@ namespace JocQuiz
         private System.Windows.Forms.Button buttonJocNou;
         private System.Windows.Forms.Label labelHighScore;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Button buttonAbout;
     }
 }
 

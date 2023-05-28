@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*************************************************************************
+* *
+* File: IScoreObserver.cs *
+* Descriere: Interfata observerului.*
+* Autor: Sebastian Miron*
+*************************************************************************/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿/*************************************************************************
+* *
+* File: SignUp.cs *
+* Descriere: Functionalitatea formularului de login. Se introduce utilizatorul si parola, daca exista contul se trece pe alegerea domeniilor.*
+* In caz ca nu exista contul se poate crea unul.*
+* Autor: Cristi Sandu *
+*************************************************************************/
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;

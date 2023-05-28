@@ -1,4 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿/*************************************************************************
+* *
+* File: LogIn.cs *
+* Descriere: La pornire, ecranul principal al aplicației prezintă un formular de login, unde utilizatorii pot introduce adresa de e-mail și parola cu care s-au înregistrat. *
+* După completarea acestora și apăsarea butonului de login, dacă datele de autentificare sunt corecte, utilizatorii sunt direcționați către meniul principal al jocului.*
+* În caz contrar, poți crea un cont nou prin apăsarea butonului de înregistrare.*
+
+* Autor: Eduard Tarciziu Ciobanu *
+*************************************************************************/
+
+
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;

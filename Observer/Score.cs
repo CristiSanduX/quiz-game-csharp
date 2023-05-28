@@ -1,4 +1,19 @@
-﻿using System;
+﻿/*************************************************************************
+* *
+* File: Score.cs *
+* Descriere: *
+* Clasa Score reprezintă un scor. Aceasta conține variabilele private _scor, _timp și _nume, care sunt utilizate pentru*
+* a stoca informații despre scorul, timpul și numele asociate jocului.
+
+Clasa are și o listă privată de observatori _observers, care sunt obiecte ce vor fi notificate atunci când scorul este actualizat.*
+Acești observatori sunt de tipul IScoreObserver, o interfață care definește metoda*
+UpdateScore utilizată pentru a actualiza observatorii cu privire la modificările scorului..*
+s
+* Autor: Sebastian Miron*
+*************************************************************************/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

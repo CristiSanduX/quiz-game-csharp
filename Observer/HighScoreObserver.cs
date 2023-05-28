@@ -1,4 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿/*************************************************************************
+* *
+* File: HighScoreObserver.cs *
+* Descriere: Implementarea observerului, cu metoda update care adauga in fisierul json, transmis ca parametru, scorul.*
+* Autor: Sebastian Miron*
+*************************************************************************/
+
+
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;

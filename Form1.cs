@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*************************************************************************
+* 
+* File: Form1.cs *
+* Descriere: Reprezintă fereastra principală a aplicației.*
+* Aici sunt definite variabile private pentru gestionarea stării jocului, precum și pentru elementele 
+* de interfață grafică, cum ar fi butoane, etichete și tab-uri.*
+* Există metode pentru gestionarea evenimentelor apărute în interfață, cum ar fi apăsarea butoanelor*
+* de login, înregistrare, selectarea unui domeniu pentru joc (Istorie, Geografie, Sport, Muzică), selectarea unui răspuns la întrebare etc.*
+* De asemenea, sunt definite și metode auxiliare pentru funcționalități specifice, cum ar fi încărcarea unei întrebări sau actualizarea timpului scurs.*
+* Autor: Diana-Florina Apostol*
+*************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -407,6 +418,16 @@ namespace JocQuiz
             {
                 MessageBox.Show(k.Message, "Eroare");
             }
+        }
+
+        /// <summary>
+        /// Funcție pentru evenimentul de click al butonului "About".
+        /// Afișează o casetă de mesaj cu informații despre jocul de cultură generală.
+        /// </summary>
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            // Afiseaza o caseta de mesaj cu informatii despre jocul de cultura generala
+            MessageBox.Show("Bun venit la Jocul de Cultură Generală! Acest joc captivant îți testează cunoștințele într-o varietate de domenii precum istorie, geografie, muzică și sport. Răspunde corect la întrebări pentru a acumula puncte și a avansa în clasament. Fii pregătit să îți pui mintea la contribuție și să îți testezi cultura generală într-un mod distractiv și educativ!\n\n© 2023 Apostol Diana, Ciobanu Eduard, Miron Sebastian, Sandu Cristi", "About");
         }
     }
 }
